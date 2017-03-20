@@ -6,7 +6,7 @@
 *.exe
 *.o
 *.so
-app/js-dist/
+app/js/
 app/css/
 
 # Packages #

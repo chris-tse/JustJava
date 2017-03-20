@@ -1,9 +1,92 @@
-body
-    background: honeydew
-    border: black 10px dashed
+$mobilebreak: 600px
 
-.square
-    width: 100px
-    height: 200px
-    background: black
-    
+body
+    margin: 0
+
+.title
+    text-align: center
+    font-size: 1.5em
+    width: auto
+    padding: 15px
+
+.main-content
+    margin: 0 auto
+    max-width: 1200px
+    width: 100%
+    display: flex
+    justify-content: space-around
+    @media (max-width: $mobilebreak)
+        display: block
+
+    .col
+        width: 40%
+        @media (max-width: $mobilebreak)
+            width: 100%
+
+    .col.drag
+        @media (max-width: $mobilebreak)
+            display: block
+            padding: 10px
+            width: auto
+
+.java
+    padding: 1.5em
+    user-select: none
+    font-size: 18px
+    @media (max-width: $mobilebreak)
+        font-size: 14px
+        padding: 0.8em
+        display: inline-block
+
+.draggable
+    display: block
+    transform: translate(0px, 0px)
+    z-index: 9999
+    @media (max-width: $mobilebreak)
+        display: inline-block
+
+.dropzone
+    background: #ddd
+    width: 100%
+    height: 130px
+    margin: 20px 0 20px 0
+    @media (max-width: $mobilebreak)
+        width: 100%
+        height: 60px
+
+
+.dropzone.can-snap
+    background: #ccc
+.dropzone.elementIn
+    background: #87BAF3
+
+    .number
+        color: white
+
+
+.number
+    font-size: 50px
+    padding-left: 10px
+    color: #bbb
+
+
+#runButton
+    padding: 10px 15px
+    background: #00E676
+    border: none
+    color: white
+    font-size: 18px
+    text-decoration: none
+    @media (max-width: $mobilebreak)
+        margin-bottom: 15px
+        margin-left: 15px
+
+#resetButton[type='submit']
+    padding: 10px 15px
+    background: #F44336
+    border: none
+    color: white
+    font-size: 18px
+    @media (max-width: $mobilebreak)
+        margin-bottom: 15px
+        margin-left: 15px

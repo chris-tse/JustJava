@@ -13,18 +13,20 @@ var gulp = require('gulp'),
     dedupe = require('gulp-dedupe'),
     clean = require('gulp-clean-css'),
     concat = require('gulp-concat'),
-    del = require('del');
+    del = require('del'),
+    bower = require('gulp-bower')
 
 /////////////////////////////
 // Scripts Task
 /////////////////////////////
 gulp.task('scripts', function() {
-    gulp.src(['app/js/*.js', '!app/js/**/*.min.js'])
+    gulp.src(['app/js-dev/*.js'])
         .pipe(concat('all.js'))
-        .pipe(gulp.dest('app/js-dist'))
+        .pipe(gulp.dest('app/js'))
         .pipe(rename({suffix:'.min'}))
         .pipe(uglify().on('error', function(e) {gutil.log(gutil.colors.red('[Error]'), e.toString()); this.emit('end');}))
-        .pipe(gulp.dest('app/js-dist'));
+        .pipe(gulp.dest('app/js'))
+        .pipe(reload({stream:true}));
 });
 
 /////////////////////////////
@@ -55,12 +57,22 @@ gulp.task('html', function() {
 /////////////////////////////
 // Build Tasks
 /////////////////////////////
-gulp.task('build', function() {
-    gulp.src('app/**/*.html').pipe(gulp.dest('build/'));
-    gulp.src('app/css/**/*.css').pipe(gulp.dest('build/css/'));
-    gulp.src('app/js-dist/*.jss').pipe(gulp.dest('build/js/'));
-    gulp.src('app/img/**/*').pipe(gulp.dest('build/img/'));
+gulp.task('clean', function() {
+    return del([
+        'build'
+    ]);
 });
+
+gulp.task('build-copy', ['clean'], function() {
+    gulp.src(['app/**/*.html', '!app/bower_components/**/*']).pipe(gulp.dest('build/'));
+    gulp.src('app/css/**/*.css').pipe(gulp.dest('build/css/'));
+    gulp.src('app/js/*.js').pipe(gulp.dest('build/js/'));
+    gulp.src('app/img/**/*').pipe(gulp.dest('build/img/'));
+    gulp.src(['app/bower_components/interactjs/dist/interact.min.js','app/bower_components/highlight/src/highlight.pack.js']).pipe(gulp.dest('build/js/'));
+    gulp.src('app/bower_components/highlight/src/styles/agate.css').pipe(gulp.dest('build/css/'))
+});
+
+gulp.task('build', ['build-copy']);
 
 /////////////////////////////
 // browserSync Task
@@ -77,7 +89,7 @@ gulp.task('browser-sync', function() {
 // Watch Task
 /////////////////////////////
 gulp.task('watch', function() {
-    gulp.watch(['app/js/**/*.js','!app/js/all.*'], ['scripts']);
+    gulp.watch(['app/js-dev/**/*.js','!app/js-dev/all.*'], ['scripts']);
     gulp.watch(['app/sass/**/*.sass'], ['sass']);
     gulp.watch(['app/**/*.html'], ['html']);
 

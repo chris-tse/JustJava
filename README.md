@@ -1,8 +1,11 @@
-#Gulp Starter Template
+# CS 3053 Group Project
 
-This is a template for starting a gulp project with JS and Sass concat and minify.
+by Christopher T, Tianyi C., Qiang P., Zhendong S.
 
 ## Usage
 
 1. Download and extract the archive or clone this repo
-`git clone https://github.com/christopher-tse/gulp-starter.git`
+
+2. Run `npm install` to install dependencies
+
+3. Run `gulp`

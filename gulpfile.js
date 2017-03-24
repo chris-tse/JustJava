@@ -33,7 +33,7 @@ gulp.task('scripts', function() {
 // Sass Task
 /////////////////////////////
 gulp.task('sass', function() {
-
+    // main menu
     gulp.src('app/sass/mainmenu.sass')
     .pipe(concat('mainmenu.sass'))
     .pipe(plumber())
@@ -46,8 +46,22 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('app/css'))
     .pipe(reload({stream:true}));
 
-    gulp.src('app/sass/styles.sass')
-    .pipe(concat('styles.sass'))
+    // general
+    gulp.src('app/sass/general.sass')
+    .pipe(concat('general.sass'))
+    .pipe(plumber())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(prefix({
+        browsers: ['> 5%'],
+        cascade: false
+    }))
+    .pipe(clean())
+    .pipe(gulp.dest('app/css'))
+    .pipe(reload({stream:true}));
+
+    //styles
+    gulp.src('app/sass/style.sass')
+    .pipe(concat('style.sass'))
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
     .pipe(prefix({

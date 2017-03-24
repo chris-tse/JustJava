@@ -77,7 +77,8 @@ gulp.task('clean', function() {
 });
 
 gulp.task('build-copy', ['clean'], function() {
-    gulp.src(['app/**/*.html', '!app/bower_components/**/*']).pipe(gulp.dest('build/'));
+    gulp.src('app/ch1/*.html').pipe(gulp.dest('build/ch1/'));
+    gulp.src(['app/index.html', '!app/bower_components/**/*']).pipe(gulp.dest('build/'));
     gulp.src('app/css/**/*.css').pipe(gulp.dest('build/css/'));
     gulp.src('app/js/*.js').pipe(gulp.dest('build/js/'));
     gulp.src('app/img/**/*').pipe(gulp.dest('build/img/'));

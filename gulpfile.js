@@ -33,7 +33,20 @@ gulp.task('scripts', function() {
 // Sass Task
 /////////////////////////////
 gulp.task('sass', function() {
-    gulp.src('app/sass/**/*.sass')
+
+    gulp.src('app/sass/mainmenu.sass')
+    .pipe(concat('mainmenu.sass'))
+    .pipe(plumber())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(prefix({
+        browsers: ['> 5%'],
+        cascade: false
+    }))
+    .pipe(clean())
+    .pipe(gulp.dest('app/css'))
+    .pipe(reload({stream:true}));
+
+    gulp.src('app/sass/styles.sass')
     .pipe(concat('styles.sass'))
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))

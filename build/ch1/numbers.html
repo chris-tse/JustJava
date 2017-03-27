@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Learn Java - 1.2 Numbers</title>
+	<title>Learn Java - 1.2 Number Types</title>
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/general.css">
 	<link rel="stylesheet" href="../css/prism.css">
@@ -12,33 +12,69 @@
     <script src="https://use.fontawesome.com/529e3dbb41.js"></script>
 </head>
 <body>
-	<main class="container">
-		<h1 class="title">Hello World</h1>
+	<main class="container group">
+		<h1 class="title">Number Types</h1>
 
-		<p>As with learning any programming language, we'll start off with a "Hello World" program so you can see what a program written in Java might look like. There might be quite a bit going on at once, and we'll cover them in more detail later on, but we'll briefly go over this example program.</p>
+		<p>In Java, we have two main data types for holding numbers: integer type and floating point number type. These are denoted by <code class="language-java">int</code> and <code class="language-java">double</code> respectively.</p>
 
-		<pre data-src="Main.java"></pre>
+        <p>To declare a variable in Java, we use the format <pre class="language-java"><code>type name = value;</code></pre></p>
+        <p>Here is an example of a program to declare two variables and print them out to the console.</p>
+		<pre data-src="NumberExample.java"></pre>
 
-		<p>Running that bit of code will print the following to either your terminal window if you're running it from the command line, or the built in console window if you're using an IDE:</p>
+		<p>As you might expect, the output will be </p>
 
-		<pre class="language-java"><code class="language-java">Hello World!</code></pre>
+		<pre class="language-java">
+<code>20
+3.14</code></pre>
 
-		<p>Quite a bit of code just to print out one line, huh? It's actually not so bad once we break it up. We really only need to focus on two lines.</p>
+	    <h2>Practice</h2>
 
-		<pre class="language-java"><code class="language-java">public static void main (String[] args) {}</code></pre>
+        <section class="problems">
+            <p>In the following pairs, click on the block of valid Java code.</p>
+            <div class="mc-pair">
+                <div class="pair1" id="choice1" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">int num = 5.0</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+                <div class="pair1" id="choice2" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">int num = 5</code></pre>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+            </div>
+            <hr>
+            <div class="mc-pair">
+                <div class="pair2" id="choice1" onclick=revealAnswer2();>
+                    <pre class="language-java"><code class="language-java">double num = 5.0</code></pre>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+                <div class="pair2" id="choice2" onclick=revealAnswer2();>
+                    <pre class="language-java"><code class="language-java">double num = 5</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
+            <hr>
+        </section>
 
-		<p>This is called the main method, and for now, all we need to know is that whenever a Java program runs, it will usually run whatever is inside this block first. And inside this, we have the actual code which we want to run:</p>
+        <p>Now that we've looked at numbers, let's look at how Java stores text.</p>
 
-		<pre class="language-java"><code class="language-java">System.out.println("Hello World!");</code></pre>
-
-		<p>Without going into too much detail, <code class="language-java">System.out.println()</code> is a method which prints out whatever is inside the parentheses and also outputs a newline.</p>
-
-		<p>If we get into detail, this will get complicated very quickly, but for now, practice programs can be written by copying the example below and changing the code within the main method.</p>
-
-		<p>In the next few lessons, we'll cover some of the data types used in Java.</p>
-
-		<a href="numbers.html" class="btn btn-green float-right">Next: Numbers <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+		<a href="letters.html" class="btn btn-green float-right">Next: Letters <i class="fa fa-angle-right" aria-hidden="true"></i></a>
 
 	</main>
+
+    <script>
+        function revealAnswer1() {
+            let el1 = document.querySelector(".pair1#choice1");
+            let el2 = document.querySelector(".pair1#choice2");
+            el1.classList.add("wrong");
+            el2.classList.add("right");
+        }
+
+        function revealAnswer2() {
+            let el1 = document.querySelector(".pair2#choice1");
+            let el2 = document.querySelector(".pair2#choice2");
+            el1.classList.add("right");
+            el2.classList.add("wrong");
+        }
+    </script>
 </body>
 </html>

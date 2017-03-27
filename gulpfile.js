@@ -91,7 +91,7 @@ gulp.task('clean', function() {
 });
 
 gulp.task('build-copy', ['clean'], function() {
-    gulp.src('app/ch1/*.html').pipe(gulp.dest('build/ch1/'));
+    gulp.src(['app/ch1/*.html', 'app/ch1/*.java']).pipe(gulp.dest('build/ch1/'));
     gulp.src(['app/index.html', 'app/test.html', '!app/bower_components/**/*']).pipe(gulp.dest('build/'));
     gulp.src('app/css/**/*.css').pipe(gulp.dest('build/css/'));
     gulp.src('app/js/*.js').pipe(gulp.dest('build/js/'));

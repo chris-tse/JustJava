@@ -1,1 +1,1 @@
-:root{font-size:24px;line-height:1.5}.container{width:100%;max-width:900px;margin:50px auto}.title{font-size:2em;width:auto;padding:15px auto}
+:root{font-size:24px;line-height:1.5}.container{width:100%;max-width:900px;margin:50px auto}@media (max-width:920px){.container{max-width:700px}}@media (max-width:699px){.container{width:95%;min-width:350px}}.title{font-size:2em;width:auto;padding:15px auto}.btn{padding:10px 15px;border-radius:5px;text-decoration:none}.btn-green{background:#2e9c33;color:#fff}.float-right{float:right}

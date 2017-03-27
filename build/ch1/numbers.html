@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Learn Java - 1.2 Numbers</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/general.css">
+	<link rel="stylesheet" href="../css/prism.css">
+	<script src="../js/prism.js"></script>
+    <script src="https://use.fontawesome.com/529e3dbb41.js"></script>
+</head>
+<body>
+	<main class="container">
+		<h1 class="title">Hello World</h1>
+
+		<p>As with learning any programming language, we'll start off with a "Hello World" program so you can see what a program written in Java might look like. There might be quite a bit going on at once, and we'll cover them in more detail later on, but we'll briefly go over this example program.</p>
+
+		<pre data-src="Main.java"></pre>
+
+		<p>Running that bit of code will print the following to either your terminal window if you're running it from the command line, or the built in console window if you're using an IDE:</p>
+
+		<pre class="language-java"><code class="language-java">Hello World!</code></pre>
+
+		<p>Quite a bit of code just to print out one line, huh? It's actually not so bad once we break it up. We really only need to focus on two lines.</p>
+
+		<pre class="language-java"><code class="language-java">public static void main (String[] args) {}</code></pre>
+
+		<p>This is called the main method, and for now, all we need to know is that whenever a Java program runs, it will usually run whatever is inside this block first. And inside this, we have the actual code which we want to run:</p>
+
+		<pre class="language-java"><code class="language-java">System.out.println("Hello World!");</code></pre>
+
+		<p>Without going into too much detail, <code class="language-java">System.out.println()</code> is a method which prints out whatever is inside the parentheses and also outputs a newline.</p>
+
+		<p>If we get into detail, this will get complicated very quickly, but for now, practice programs can be written by copying the example below and changing the code within the main method.</p>
+
+		<p>In the next few lessons, we'll cover some of the data types used in Java.</p>
+
+		<a href="numbers.html" class="btn btn-green float-right">Next: Numbers <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+
+	</main>
+</body>
+</html>

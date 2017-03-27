@@ -1,11 +1,18 @@
 \:root
-	font-size: 24px	
+	font-size: 24px
 	line-height: 1.5
 
 .container
 	width: 100%
 	max-width: 900px
 	margin: 50px auto
+	@media (max-width: 920px)
+		max-width: 700px
+
+	@media (max-width: 699px)
+		width: 95%
+		min-width: 350px
+
 
 .title
     font-size: 2em
@@ -20,7 +27,6 @@
 .btn-green
 	background: #2e9c33
 	color: white
-
 
 
 .float-right

@@ -32,30 +32,49 @@
         <section class="problems">
             <p>In the following pairs, click on the block of valid Java code.</p>
             <div class="mc-pair">
-                <div class="choice" id="choice1">
+                <div class="pair1" id="choice1" onclick=revealAnswer1();>
                     <pre class="language-java"><code class="language-java">int num = 5.0</code></pre>
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
-                <div class="choice" id="choice2">
+                <div class="pair1" id="choice2" onclick=revealAnswer1();>
                     <pre class="language-java"><code class="language-java">int num = 5</code></pre>
                     <i class="fa fa-check" aria-hidden="true"></i>
                 </div>
             </div>
             <hr>
             <div class="mc-pair">
-                <div class="choice" id="choice1">
+                <div class="pair2" id="choice1" onclick=revealAnswer2();>
                     <pre class="language-java"><code class="language-java">double num = 5.0</code></pre>
                     <i class="fa fa-check" aria-hidden="true"></i>
                 </div>
-                <div class="choice" id="choice2">
+                <div class="pair2" id="choice2" onclick=revealAnswer2();>
                     <pre class="language-java"><code class="language-java">double num = 5</code></pre>
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
             </div>
+            <hr>
         </section>
+
+        <p>Now that we've looked at numbers, let's look at how Java stores text.</p>
 
 		<a href="letters.html" class="btn btn-green float-right">Next: Letters <i class="fa fa-angle-right" aria-hidden="true"></i></a>
 
 	</main>
+
+    <script>
+        function revealAnswer1() {
+            let el1 = document.querySelector(".pair1#choice1");
+            let el2 = document.querySelector(".pair1#choice2");
+            el1.classList.add("wrong");
+            el2.classList.add("right");
+        }
+
+        function revealAnswer2() {
+            let el1 = document.querySelector(".pair2#choice1");
+            let el2 = document.querySelector(".pair2#choice2");
+            el1.classList.add("right");
+            el2.classList.add("wrong");
+        }
+    </script>
 </body>
 </html>

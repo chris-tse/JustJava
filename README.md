@@ -5,7 +5,12 @@ by Christopher T, Tianyi C., Qiang P., Zhendong S.
 ## Demo
 
 Build of current work can be viewed [here](http://chris-tse.com/build/)
-- Chapter 1 content draft complete
+- Chapter 1 content (complete)
+- Chapter 2 content (in progress)
+- Chapter 3 content (not started)
+- Chapter 4 content (not started)
+- Chapter 5 content (not started)
+
 
 ## Usage
 

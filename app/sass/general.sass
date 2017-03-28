@@ -18,24 +18,31 @@
 	    width: 100%
 	    padding: 15px 0px
 
-	.btn
-		padding: 10px 15px
-		border-radius: 5px
+	.toc
 		text-decoration: none
-		margin: 8px auto
-
-	.btn-green
-		background: #2e9c33
-		color: white
-
-	.btn-grey
-		background: #ddd
-		color: #222
 
 	p > code.language-java, li > code.language-java
 		font-size: 0.8em
 		padding: 5px
 		vertical-align: middle
+
+	.nav
+		display: flex
+		align-items: baseline
+
+		.btn
+			padding: 10px 15px
+			border-radius: 5px
+			text-decoration: none
+			margin-top: 8px
+
+		.btn-green
+			background: #2e9c33
+			color: white
+
+		.btn-grey
+			background: #ddd
+			color: #222
 
 .problems
 	margin: 20px auto
@@ -71,12 +78,6 @@
 		color: red
 		display: inline-block
 
-.float-right
-	float: right
-
-.float-left
-	float: left
-
 
 @media(max-width: 749px)
 	.container
@@ -92,6 +93,8 @@
 			display: block
 			width: 100%
 			text-align: center
+		.nav
+			flex-direction: column
 
 @media(min-width: 750px)
 	.container
@@ -104,8 +107,11 @@
 		p, pre, .btn
 			font-size: 0.9rem
 		.btn
-			display: block
-			width: 90%
+			display: inline-block
+			line-height: 1.5
+		.nav
+			flex-direction: row-reverse
+			justify-content: space-between
 
 @media(min-width: 950px)
 	.container
@@ -117,9 +123,6 @@
 			flex-direction: row
 		p, pre, .btn
 			font-size: 1rem
-		.btn
-			display: inline-block
-			width: auto
 		
 
 @media(min-width: 1200px)

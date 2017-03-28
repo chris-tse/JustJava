@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Learn Java - 1.4 Logic</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/general.css">
+	<link rel="stylesheet" href="../css/prism.css">
+	<script src="../js/prism.js"></script>
+    <script src="https://use.fontawesome.com/529e3dbb41.js"></script>
+</head>
+<body>
+	<main class="container group">
+        <div>
+                    <section>
+            <h1 class="title">Logic</h1>
+
+            <p>While programming, there are many times when we need to check whether something is true or false. Java stores these values in the <code class="language-java">boolean</code> data type, which only hold either <code class="language-java">true</code> or <code class="language-java">false</code></p>
+
+            <p>In order to check whether something is true or false, we use equality and relational operators. They are as follows:</p>
+
+            <ul>
+                <li><code class="language-java">==</code> &nbsp;&nbsp; equal to</li>
+                <li><code class="language-java">!=</code> &nbsp;&nbsp; not equal to</li>
+                <li><code class="language-java">> </code> &nbsp;&nbsp; greater than</li>
+                <li><code class="language-java">>=</code> &nbsp;&nbsp; greater than or equal to</li>
+                <li><code class="language-java">< </code> &nbsp;&nbsp; less than</li>
+                <li><code class="language-java"><=</code> &nbsp;&nbsp; less than or equal to</li>
+            </ul>
+
+            <p>When declaring a character in Java, we use the type <code class="language-java">char</code> and surround the character with single quotes.</p>
+
+            <p>For several characters in a row, like whole words and sentences, a <code class="language-java">String</code> type must be used, and the string should be wrapped in double quotes (note that <code class="language-java">String</code> is capitalized).</p>
+
+            <p>Here is an example of a program demonstrating the use of <code class="language-java">char</code> and <code class="language-java">String</code>:</p>
+            <pre data-src="CharStringExample.java"></pre>
+
+            <p>The code above will output the following:</p>
+
+            <pre class="language-java">
+<code>Hello, my name is John Doe and my favorite letter is X</code></pre>
+
+            <p>Go ahead and experiment with it; have the program output your name and your own favorite letter.</p>
+        </section>
+        </div>
+		
+
+	    <h2>Practice</h2>
+
+        <section class="problems">
+            <p>In the following pairs, click on the block of valid Java code.</p>
+            <div class="mc-pair">
+                <div class="pair1" id="choice1" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">char c = 'a'</code></pre>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+                <div class="pair1" id="choice2" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">char c = "a"</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
+            <hr>
+            <div class="mc-pair">
+                <div class="pair2" id="choice1" onclick=revealAnswer2();>
+                    <pre class="language-java"><code class="language-java">String name = "Bob"</code></pre>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+                <div class="pair2" id="choice2" onclick=revealAnswer2();>
+                    <pre class="language-java"><code class="language-java">String name = 'Bob'</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+            </div>
+        </section>
+
+        <p>Now that we've looked at numbers, let's look at how Java stores text.</p>
+
+		<a href="logic.html" class="btn btn-green float-right">Next: Logic <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        <a href="numbers.html" class="btn btn-grey float-left"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: Numbers</a>
+
+	</main>
+
+    <script>
+        function revealAnswer1() {
+            let el1 = document.querySelector(".pair1#choice1");
+            let el2 = document.querySelector(".pair1#choice2");
+            el1.classList.add("right");
+            el2.classList.add("wrong");
+        }
+
+        function revealAnswer2() {
+            let el1 = document.querySelector(".pair2#choice1");
+            let el2 = document.querySelector(".pair2#choice2");
+            el1.classList.add("right");
+            el2.classList.add("wrong");
+        }
+    </script>
+</body>
+</html>

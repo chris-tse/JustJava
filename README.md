@@ -4,7 +4,7 @@ by Christopher T, Tianyi C., Qiang P., Zhendong S.
 
 ## Demo
 
-Build of current work can be viewed (http://chris-tse.com/build/)[here]
+Build of current work can be viewed [http://chris-tse.com/build/](here)
 
 ## Usage
 

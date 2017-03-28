@@ -1,13 +1,17 @@
+*
+	box-sizing: border-box !important
+
 \:root
 	font-size: 22px
 	font-family: Helvetica, Arial, sans-serif
 	line-height: 1.5
+	
 
 .container
 	width: 100%
-	max-width: 1020px
+	padding-left: 15px
+	padding-right: 15px
 	margin: 50px auto
-
 
 	.title
 	    font-size: 2rem
@@ -18,10 +22,15 @@
 		padding: 10px 15px
 		border-radius: 5px
 		text-decoration: none
+		margin: 8px auto
 
 	.btn-green
 		background: #2e9c33
 		color: white
+
+	.btn-grey
+		background: #ddd
+		color: #222
 
 .problems
 	margin: 20px auto
@@ -34,7 +43,7 @@
 	align-items: center
 
 	div
-		padding: 20px
+		padding: 10px
 
 	.fa
 		text-align: center
@@ -57,24 +66,59 @@
 .float-right
 	float: right
 
+.float-left
+	float: left
 
-@media (max-width: 1040px)
+
+@media(max-width: 749px)
 	.container
-		max-width: 800px
+		max-width: none
+		margin: 10px auto
+		.mc-pair
+			flex-direction: column
 		.title
-			font-size: 1.8rem
-		p, pre
-			font-size: 0.9rem
+			font-size: 1.3rem
+		p, pre, .btn
+			font-size: 0.8rem
+		.btn
+			display: block
+			width: 100%
+			text-align: center
 
-@media (max-width: 699px)
+@media(min-width: 750px)
 	.container
-		width: 95%
-		min-width: 350px
+		max-width: 700px
+		margin: 15px auto
+		.mc-pair
+			flex-direction: column
+		.title
+			font-size: 1.3rem
+		p, pre, .btn
+			font-size: 0.8rem
+		.btn
+			display: block
+			width: 90%
+
+@media(min-width: 950px)
+	.container
+		max-width: 850px
+		margin: 30px auto
 		.title
 			font-size: 1.5rem
-		p, pre
-			font-size: 0.7rem
+		.mc-pair
+			flex-direction: row
+		.btn
+			display: inline-block
+			width: auto
+		
 
+@media(min-width: 1200px)
+	.container
+		max-width: 1150px
+		.title
+			font-size: 1.8rem
+		p, pre, .btn
+			font-size: 0.9rem
 
 // Clearfix
 .group:before,

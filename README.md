@@ -2,6 +2,10 @@
 
 by Christopher T, Tianyi C., Qiang P., Zhendong S.
 
+## Demo
+
+Build of current work can be viewed (http://chris-tse.com/build/)[here]
+
 ## Usage
 
 1. Download and extract the archive or clone this repo

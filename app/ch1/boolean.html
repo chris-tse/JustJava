@@ -22,7 +22,7 @@
 <code class="language-java">boolean isStudent = true; // is a student
 boolean isHungry = false; // is not hungry</code></pre>
 
-            <p>We can also invert the value using the <code class="language-java">!</code> symbol, known as the unary invert operator, which simply gives the opposite value. For example:</p>
+            <p>We can also invert the value using the <code class="language-java">!</code> symbol by placing it before the value, known as the unary invert operator, which simply gives the opposite value. For example:</p>
 
             <pre class="language-java">
 <code class="language-java">boolean b = true;
@@ -43,34 +43,55 @@ System.out.println(!b); // prints out false</code></pre>
 	    <h2>Practice</h2>
 
         <section class="problems">
-            <p>In the following pairs, click on the block of valid Java code.</p>
+            <p>In the following pair, click on the block of valid Java code.</p>
             <div class="mc-pair">
                 <div class="pair1" id="choice1" onclick=revealAnswer1();>
-                    <pre class="language-java"><code class="language-java">char c = 'a'</code></pre>
-                    <i class="fa fa-check" aria-hidden="true"></i>
+                    <pre class="language-java"><code class="language-java">boolean isHungry = 'false'</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
                 <div class="pair1" id="choice2" onclick=revealAnswer1();>
-                    <pre class="language-java"><code class="language-java">char c = "a"</code></pre>
-                    <i class="fa fa-times" aria-hidden="true"></i>
+                    <pre class="language-java"><code class="language-java">boolean isHungry = false</code></pre>
+                    <i class="fa fa-check" aria-hidden="true"></i>
                 </div>
             </div>
             <hr>
             <div class="mc-pair">
                 <div class="pair2" id="choice1" onclick=revealAnswer2();>
-                    <pre class="language-java"><code class="language-java">String name = "Bob"</code></pre>
-                    <i class="fa fa-check" aria-hidden="true"></i>
+                    <pre class="language-java"><code class="language-java">boolean isStudent = true!;</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
                 <div class="pair2" id="choice2" onclick=revealAnswer2();>
-                    <pre class="language-java"><code class="language-java">String name = 'Bob'</code></pre>
+                    <pre class="language-java"><code class="language-java">boolean isStudent = !true;</code></pre>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+            </div>
+            <hr>
+            <p>Consider this block of code:</p>
+            <pre class="language-java">
+<code class="language-java">boolean b = true;
+boolean c = !b;
+System.out.println(c);</code></pre>
+            <p>What will be the output?</p>
+            <div class="mc-pair">
+                <div class="pair3" id="choice1" onclick=revealAnswer3();>
+                    <pre class="language-java"><code class="language-java">false</code></pre>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+                <div class="pair3" id="choice2" onclick=revealAnswer3();>
+                    <pre class="language-java"><code class="language-java">true</code></pre>
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
             </div>
+            <hr>
         </section>
 
-        <p>Now that we've looked at numbers, let's look at how Java stores text.</p>
+        
+        
 
-		<a href="logic.html" class="btn btn-green float-right">Next: Logic <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-        <a href="numbers.html" class="btn btn-grey float-left"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: Numbers</a>
+        <p>Congratulations, you have finished Chapter 1! You now know about the different data types used in Java. Now let's move on to some more exciting stuff.</p>
+
+		<a href="logic.html" class="btn btn-green float-right">Next: Chapter 2 <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        <a href="numbers.html" class="btn btn-grey float-left"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: Chars and Strings</a>
 
 	</main>
 
@@ -78,13 +99,20 @@ System.out.println(!b); // prints out false</code></pre>
         function revealAnswer1() {
             let el1 = document.querySelector(".pair1#choice1");
             let el2 = document.querySelector(".pair1#choice2");
-            el1.classList.add("right");
-            el2.classList.add("wrong");
+            el1.classList.add("wrong");
+            el2.classList.add("right");
         }
 
         function revealAnswer2() {
             let el1 = document.querySelector(".pair2#choice1");
             let el2 = document.querySelector(".pair2#choice2");
+            el1.classList.add("wrong");
+            el2.classList.add("right");
+        }
+
+        function revealAnswer3() {
+            let el1 = document.querySelector(".pair3#choice1");
+            let el2 = document.querySelector(".pair3#choice2");
             el1.classList.add("right");
             el2.classList.add("wrong");
         }

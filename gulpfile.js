@@ -92,12 +92,11 @@ gulp.task('clean', function() {
 
 gulp.task('build-copy', ['clean'], function() {
     gulp.src(['app/ch1/*.html', 'app/ch1/*.java']).pipe(gulp.dest('build/ch1/'));
-    gulp.src(['app/index.html', 'app/test.html', '!app/bower_components/**/*']).pipe(gulp.dest('build/'));
+    gulp.src(['app/ch2/*.html', 'app/ch2/*.java']).pipe(gulp.dest('build/ch2/'));
+    gulp.src(['app/index.html', 'app/test.html']).pipe(gulp.dest('build/'));
     gulp.src('app/css/**/*.css').pipe(gulp.dest('build/css/'));
     gulp.src('app/js/*.js').pipe(gulp.dest('build/js/'));
-    gulp.src('app/img/**/*').pipe(gulp.dest('build/img/'));
-    gulp.src(['app/bower_components/interactjs/dist/interact.min.js','app/bower_components/highlight/src/highlight.pack.js']).pipe(gulp.dest('build/js/'));
-    gulp.src('app/bower_components/highlight/src/styles/agate.css').pipe(gulp.dest('build/css/'))
+    gulp.src('app/img/*').pipe(gulp.dest('build/img/'));
 });
 
 gulp.task('build', ['build-copy']);

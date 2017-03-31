@@ -5,6 +5,7 @@
 	font-size: 22px
 	font-family: Helvetica, Arial, sans-serif
 	line-height: 1.5
+	color: #292724
 	
 
 .container
@@ -47,21 +48,18 @@
 .problems
 	margin: 20px auto
 
-	pre
-		cursor: pointer
-
 // Practice problem
 .mc-pair
 	text-align: center
-
 	.pair1, .pair2, .pair3
-		width: 49%;
+		background: #eee
+		border-radius: 5px
+		cursor: pointer
+		&:hover
+			background: #ddd
+	pre
 		display: inline-block
-		flex-direction: column
-
-		pre
-			display: inline-block
-			margin: 0
+		margin: 0
 
 	div
 		padding: 10px
@@ -74,12 +72,12 @@
 
 
 .right
-	background: #caf3ca
+	background: #caf3ca !important
 	.fa
 		color: green
 		display: inline-block
 .wrong
-	background: #f5cbcb
+	background: #f5cbcb !important
 	.fa
 		color: red
 		display: inline-block
@@ -90,7 +88,9 @@
 		max-width: none
 		margin: 10px auto
 		.mc-pair
-			flex-direction: column
+			.pair1, .pair2, .pair3
+				display: block
+				width: auto
 		.title
 			font-size: 1.4rem
 		p, pre, .btn, .toc
@@ -109,7 +109,9 @@
 		.toc
 			font-size: 0.9rem
 		.mc-pair
-			flex-direction: column
+			.pair1, .pair2, .pair3
+				width: 49%;
+				display: inline-block
 		.title
 			font-size: 1.4rem
 		p, pre, .btn

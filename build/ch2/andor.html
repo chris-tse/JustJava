@@ -15,25 +15,29 @@
     		margin: 0 auto;
     		min-width: 350px;
     		width: 33%;
-
     	}
 
 		.tool {
 			display: inline-block;
-			background: #272822;
+			background: #eee;
 			padding: 1em;
 			margin: 0.5em 0;
 			font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-			color: white;
 			min-width: 100px;
 			width: 32.16%;
 			text-align: center;
 			cursor: pointer;
+			border-radius: 5px;
+		}
+		.tool:hover {
+			background: #ddd;
 		}
 
 		.tool.full {
 			width: 100%;
 			cursor: default;
+			color: white;
+			background: #272822;
 		}
 
 		.tip {
@@ -85,11 +89,11 @@ boolean d = a || b;</code></pre>
 			<div class="mc-pair">
 				<div class="pair2" id="choice1" onclick=revealAnswer2();>
                     <pre class="language-java"><code class="language-java">(9 < 3) || (1 > 9)</code></pre>
-                    <i class="fa fa-check" aria-hidden="true"></i>
+                    <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
                 <div class="pair2" id="choice2" onclick=revealAnswer2();>
                     <pre class="language-java"><code class="language-java">(7 < 1) || (5 > 2)</code></pre>
-                    <i class="fa fa-times" aria-hidden="true"></i>
+                    <i class="fa fa-check" aria-hidden="true"></i>
                 </div>
 			</div>
 		</section>

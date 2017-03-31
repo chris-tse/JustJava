@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Learn Java - 2.2 AND and OR</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/general.css">
+	<link rel="stylesheet" href="../css/prism.css">
+	<script src="../js/prism.js"></script>
+    <script src="https://use.fontawesome.com/529e3dbb41.js"></script>
+    <style>
+    	.toolcont {
+    		margin: 0 auto;
+    		min-width: 350px;
+    		width: 33%;
+
+    	}
+
+		.tool {
+			display: inline-block;
+			background: #272822;
+			padding: 1em;
+			margin: 0.5em 0;
+			font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+			color: white;
+			min-width: 100px;
+			width: 32.16%;
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.tool.full {
+			width: 100%;
+			cursor: default;
+		}
+
+		.tip {
+			color: #555;
+			font-size: 0.7rem !important;
+			text-align: center;
+			margin-bottom: 0;
+		}
+    </style>
+</head>
+<body>
+	<main class="container group">
+		<h1 class="title">AND and OR</h1>
+		<a href="../index.html" class="toc"><i class="fa fa-angle-left" aria-hidden="true"></i> Back to Table of Contents</a>
+		<p>Now that we've looked at ways to compare two values, what if we need to make a decision based on whether two or more things are true or false? To do this we use two logical operators called the AND and OR operators, represented by <code class="language-java">&amp;&amp;</code> and <code class="language-java">||</code> respectively.</p>
+
+		<p>Here is a table which shows the result of these operators depending on <code class="language-java">x</code> and <code class="language-java">y</code></p>
+
+		<pre data-src="andortable.java"></pre>
+
+		<p>These correspond to how we use these terms in the English language as well. consider the follow statements here:</p>
+
+		<pre class="language-java"><code class="language-java">boolean c = a && b; // a and b are boolean types
+boolean d = a || b;</code></pre>
+
+		<p>In English, we'd say that <code class="language-java">c</code> is true when both <code class="language-java">a</code> <em>AND</em> <code class="language-java">b</code> are true, otherwise it is false. Similarily, we can say that <code class="language-java">d</code> is true when either one of <code class="language-java">a</code> <em>OR</em> <code class="language-java">b</code> is true.</p>
+
+		<p>Why do we need these operators? We will see the use of these in the next section when we cover <code class="language-java">if</code> statements. These statements rely only on one value of <code class="language-java">true</code> or <code class="language-java">false</code>, so if you have multiple conditions to check, you will either need use many <code class="language-java">if</code> statements, or have a way to represent many conditions as a single value using logical operators.</p>
+
+		<h2>Practice</h2>
+
+		<p>Here's a tool you can use when doing the practice problems below. Click the boolean values to toggle them, and click the operator in the middle to switch between <code class="language-java">&&</code> and <code class="language-java">||</code>. The result will be shown below.</p>
+
+		<div class="toolcont"><p class="tip">Try out different combinations and see what happens!</p><code class="tool token boolean" id="a" onclick=changeA();>true</code> <code class="tool" id="op" onclick=changeOp();>||</code> <code class="tool token boolean" id="b" onclick=changeB();>false</code><br/><code class="tool full">Result: <span id="out">false</span></code></div>
+
+		<section class="problems">
+			<p>In the following pairs, which of them evaluate to <code class="language-java">true</code>?</p>
+			<div class="mc-pair">
+				<div class="pair1" id="choice1" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">(2 < 3) && (4 > 3)</code></pre>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+                <div class="pair1" id="choice2" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">(7 < 1) && (5 > 2)</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+			</div>
+			<hr>
+			<div class="mc-pair">
+				<div class="pair2" id="choice1" onclick=revealAnswer2();>
+                    <pre class="language-java"><code class="language-java">(9 < 3) || (1 > 9)</code></pre>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+                <div class="pair2" id="choice2" onclick=revealAnswer2();>
+                    <pre class="language-java"><code class="language-java">(7 < 1) || (5 > 2)</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+			</div>
+		</section>
+		<div class="nav">
+			<a href="andor.html" class="btn btn-green">Next: if statement <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+			<a class="btn btn-grey" href="equality.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: Equality</a>
+		</div>
+	</main>
+
+	<script>
+		let a = document.querySelector("#a");
+		let b = document.querySelector("#b");
+		let op = document.querySelector("#op");
+		let out = document.querySelector("#out");
+		op.click();
+
+
+		function changeA() {
+		  if (a.innerHTML === "true") {
+		    a.innerHTML = "false";
+		  }
+		  else {
+		    a.innerHTML = "true"
+		  }
+		  //console.log("A is now " + (a.innerHTML == "true"));
+		  evalOut();
+		}
+
+		function changeB() {
+		  if (b.innerHTML === "true") {
+		    b.innerHTML = "false";
+		  }
+		  else {
+		    b.innerHTML = "true"
+		  }
+		  //console.log("B is now " + (b.innerHTML == "true"));
+		  evalOut();
+		}
+
+		function changeOp() {
+		  if (op.innerHTML === "&amp;&amp;") {
+		    op.innerHTML = "||"
+		  }
+		  else {
+		    op.innerHTML = "&amp;&amp;";
+		  }
+		  //console.log("Op is now " + op.innerHTML)
+		  evalOut();
+		}
+
+		function evalOut() {
+		  out.innerHTML = (op.innerHTML === "&amp;&amp;" ? (a.innerHTML == "true") && (b.innerHTML == "true") : (a.innerHTML == "true") || (b.innerHTML == "true"))
+		}
+
+		function revealAnswer1() {
+            let el1 = document.querySelector(".pair1#choice1");
+            let el2 = document.querySelector(".pair1#choice2");
+            el1.classList.add("right");
+            el2.classList.add("wrong");
+        }
+
+        function revealAnswer2() {
+            let el1 = document.querySelector(".pair2#choice1");
+            let el2 = document.querySelector(".pair2#choice2");
+            el1.classList.add("wrong");
+            el2.classList.add("right");
+        }
+	</script>
+</body>
+</html>
+
+

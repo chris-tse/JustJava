@@ -54,8 +54,19 @@ boolean c = true != false</code></pre>
                     <i class="fa fa-check" aria-hidden="true"></i>
                 </div>
                 <div class="pair1" id="choice2" onclick=revealAnswer1();>
-                    <pre class="language-java"><code class="language-java">3 > 9</code></pre>
+                    <pre class="language-java"><code class="language-java">9 > 3</code></pre>
                     <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+			</div>
+			<hr>
+			<div class="mc-pair">
+				<div class="pair2" id="choice1" onclick=revealAnswer2();>
+                    <pre class="language-java"><code class="language-java">99 < 1</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+                <div class="pair2" id="choice2" onclick=revealAnswer2();>
+                    <pre class="language-java"><code class="language-java">5 == 5.0</code></pre>
+                    <i class="fa fa-check" aria-hidden="true"></i>
                 </div>
 			</div>
 		</section>
@@ -63,9 +74,24 @@ boolean c = true != false</code></pre>
 			<a href="andor.html" class="btn btn-green">Next: And / Or <i class="fa fa-angle-right" aria-hidden="true"></i></a>
 			<a class="btn btn-grey" href="flowcontrol.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: Chapter 2 Introduction</a>
 		</div>
-		
 
 	</main>
+
+	<script>
+        function revealAnswer1() {
+            let el1 = document.querySelector(".pair1#choice1");
+            let el2 = document.querySelector(".pair1#choice2");
+            el1.classList.add("right");
+            el2.classList.add("wrong");
+        }
+
+        function revealAnswer2() {
+            let el1 = document.querySelector(".pair2#choice1");
+            let el2 = document.querySelector(".pair2#choice2");
+            el1.classList.add("wrong");
+            el2.classList.add("right");
+        }
+	</script>
 </body>
 </html>
 

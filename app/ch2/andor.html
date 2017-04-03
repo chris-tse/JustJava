@@ -17,20 +17,27 @@
     		width: 33%;
     	}
 
+    	.toolwrap {
+    		background: #eee;
+    		padding: 0.8em;
+    		border-radius: 5px;
+    		width: 32.16%;
+    		display: inline-block;
+    		min-width: 100px;
+    		text-align: center;
+    		cursor: pointer;
+    	}
+
+    	.toolwrap:hover {
+    		background: #ddd;
+    	}
+
 		.tool {
 			display: inline-block;
-			background: #eee;
-			padding: 1em;
+			padding: 0.3em;
 			margin: 0.5em 0;
 			font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-			min-width: 100px;
-			width: 32.16%;
-			text-align: center;
-			cursor: pointer;
 			border-radius: 5px;
-		}
-		.tool:hover {
-			background: #ddd;
 		}
 
 		.tool.full {
@@ -38,6 +45,8 @@
 			cursor: default;
 			color: white;
 			background: #272822;
+			padding: 1em;
+			text-align: center;
 		}
 
 		.tip {
@@ -71,7 +80,13 @@ boolean d = a || b;</code></pre>
 
 		<p>Here's a tool you can use when doing the practice problems below. Click the boolean values to toggle them, and click the operator in the middle to switch between <code class="language-java">&&</code> and <code class="language-java">||</code>. The result will be shown below.</p>
 
-		<div class="toolcont"><p class="tip">Try out different combinations and see what happens!</p><code class="tool token boolean" id="a" onclick=changeA();>true</code> <code class="tool" id="op" onclick=changeOp();>||</code> <code class="tool token boolean" id="b" onclick=changeB();>false</code><br/><code class="tool full">Result: <span id="out">false</span></code></div>
+		<div class="toolcont">
+			<p class="tip">Try out different combinations and see what happens!</p>
+
+			<span class="toolwrap" onclick=changeA();><code class="tool token boolean" id="a">true</code></span> <span class="toolwrap" onclick=changeOp();><code class="tool" id="op">||</code></span> <span class="toolwrap" onclick=changeB()><code class="tool token boolean" id="b";>false</code></span>
+			<br/>
+			<code class="tool full">Result: <span id="out">false</span></code>
+		</div>
 
 		<section class="problems">
 			<p>In the following pairs, which of them evaluate to <code class="language-java">true</code>?</p>
@@ -110,6 +125,12 @@ boolean d = a || b;</code></pre>
 		let out = document.querySelector("#out");
 		op.click();
 
+		// let a = document.getElementById("a");
+		// let b = document.getElementById("b");
+		// let op = document.getElementById("op");
+
+		
+
 
 		function changeA() {
 		  if (a.innerHTML === "true") {
@@ -118,7 +139,7 @@ boolean d = a || b;</code></pre>
 		  else {
 		    a.innerHTML = "true"
 		  }
-		  //console.log("A is now " + (a.innerHTML == "true"));
+		  console.log("A is now " + (a.innerHTML == "true"));
 		  evalOut();
 		}
 
@@ -129,7 +150,7 @@ boolean d = a || b;</code></pre>
 		  else {
 		    b.innerHTML = "true"
 		  }
-		  //console.log("B is now " + (b.innerHTML == "true"));
+		  console.log("B is now " + (b.innerHTML == "true"));
 		  evalOut();
 		}
 
@@ -140,12 +161,20 @@ boolean d = a || b;</code></pre>
 		  else {
 		    op.innerHTML = "&amp;&amp;";
 		  }
-		  //console.log("Op is now " + op.innerHTML)
+		  console.log("Op is now " + op.innerHTML)
 		  evalOut();
 		}
 
 		function evalOut() {
-		  out.innerHTML = (op.innerHTML === "&amp;&amp;" ? (a.innerHTML == "true") && (b.innerHTML == "true") : (a.innerHTML == "true") || (b.innerHTML == "true"))
+			out.innerHTML = (op.innerHTML === "&amp;&amp;" ? (a.innerHTML == "true") && (b.innerHTML == "true") : (a.innerHTML == "true") || (b.innerHTML == "true"))
+			// let aval = a.options[a.selectedIndex].value;
+			// let bval = b.options[b.selectedIndex].value;
+			// let opval = op.options[op.selectedIndex].value;
+			// console.log("aval: " + aval);
+			// console.log("opval: " + opval);
+			// console.log("bval: " + bval);
+
+			// out.innerHTML = (opval == "0" ? (aval == "1") && (bval == "1") : (aval == "1") || (bval == "1"));
 		}
 
 		function revealAnswer1() {

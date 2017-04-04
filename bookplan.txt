@@ -29,3 +29,4 @@ Chapter 5 Algorithms
 	5.2 Insertion Sort
 	5.3 Selection Sort
 	5.4 Quick Sort
+

@@ -18,21 +18,20 @@
 		<p>In computer science, a ternary operator is an operator that takes three arguments in a single line of code, the Java ternary operator let's you assign a value to a variable based on a boolean expression — either a boolean field, or a statement that evaluates to a boolean result. </p>
 
 		<p>The syntax of ternary operator: </p>
+		<pre class="language-java"><code class="language-java">condition ? expre1 : expr2;</code></pre>
 
-		<ul>
-		    <code class="language-java">condition ? expre1 : expr2;</code>
-		   
-		</ul>
 
 		<p>If condition is true, the operator returns the value of expr1; otherwise, it returns the value of expr2. For example, if you want to compair the value a and b, and return small value, you can do this:</p>
-			<code class="language-java"> a > b? b : a ;</code>
+
+		<pre class="language-java"><code class="language-java"> a > b ? b : a ;</code></pre>
+
 		<p>The condition statement is a > b , if a > b is <code class="language-java">true</code>, it will return expression 1 which is b, if the condition is <code class="language-java">false</code>, it will return the expression 2 which is a.
 
 		<p>Below are some examples that demonstrating some basic example using ternary operator
 		<pre class="language-java"><code class="language-java">// if (a+b) great than c, return a, else return b
 int result = (a+b) > c ? a : b;
 //if a is not equal to b, print a, otherwise print b
-(a != b) ? System.out.print(a): System.out.print(b);
+(a != b) ? System.out.print(a): System.out.print(b);</code></pre>
 
 
 		<p>Ternary operator can be use in nested structure , below is the code that will find the biggest value in three numbers.</p>
@@ -92,4 +91,3 @@ int result = (a+b) > c ? a : b;
 	</script>
 </body>
 </html>
-

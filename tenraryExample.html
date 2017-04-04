@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Learn Java - 2.1 Equality</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/general.css">
+	<link rel="stylesheet" href="../css/prism.css">
+	<script src="../js/prism.js"></script>
+    <script src="https://use.fontawesome.com/529e3dbb41.js"></script>
+</head>
+<body>
+	<main class="container group">
+		<h1 class="title">Ternary Operator</h1>
+		<a href="../index.html" class="toc"><i class="fa fa-angle-left" aria-hidden="true"></i> Back to Table of Contents</a>
+		<p>In computer science, a ternary operator is an operator that takes three arguments in a single line of code, the Java ternary operator let's you assign a value to a variable based on a boolean expression — either a boolean field, or a statement that evaluates to a boolean result. </p>
+
+		<p>The syntax of ternary operator: </p>
+
+		<ul>
+		    <code class="language-java">condition ? expre1 : expr2;</code>
+		   
+		</ul>
+
+		<p>If condition is true, the operator returns the value of expr1; otherwise, it returns the value of expr2. For example, if you want to compair the value a and b, and return small value, you can do this:</p>
+			<code class="language-java"> a > b? b : a ;</code>
+		<p>The condition statement is a > b , if a > b is <code class="language-java">true</code>, it will return expression 1 which is b, if the condition is <code class="language-java">false</code>, it will return the expression 2 which is a.
+
+		<p>Below are some examples that demonstrating some basic example using ternary operator
+		<pre class="language-java"><code class="language-java">// if (a+b) great than c, return a, else return b
+int result = (a+b) > c ? a : b;
+//if a is not equal to b, print a, otherwise print b
+(a != b) ? System.out.print(a): System.out.print(b);
+
+
+		<p>Ternary operator can be use in nested structure , below is the code that will find the biggest value in three numbers.</p>
+
+		<pre data-src="TernaryExample.java"></pre>
+
+		<p>The above program will output the following:</p>
+
+		<pre class="language-java"><code class="language-java">The biggest number is 7</code></pre>
+
+		<h2>Practice</h2>
+		<section class="problems">
+			<p>In the following pairs, which of them evaluate to <code class="language-java">true</code>?</p>
+			<div class="mc-pair">
+				<div class="pair1" id="choice1" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">5 != 7</code></pre>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+                <div class="pair1" id="choice2" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">9 > 3</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+			</div>
+			<hr>
+			<div class="mc-pair">
+				<div class="pair2" id="choice1" onclick=revealAnswer2();>
+                    <pre class="language-java"><code class="language-java">99 < 1</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+                <div class="pair2" id="choice2" onclick=revealAnswer2();>
+                    <pre class="language-java"><code class="language-java">5 == 5.0</code></pre>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+			</div>
+		</section>
+		<div class="nav">
+			<a href="andor.html" class="btn btn-green">Next: And / Or <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+			<a class="btn btn-grey" href="flowcontrol.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: Chapter 2 Introduction</a>
+		</div>
+
+	</main>
+
+	<script>
+        function revealAnswer1() {
+            let el1 = document.querySelector(".pair1#choice1");
+            let el2 = document.querySelector(".pair1#choice2");
+            el1.classList.add("right");
+            el2.classList.add("wrong");
+        }
+
+        function revealAnswer2() {
+            let el1 = document.querySelector(".pair2#choice1");
+            let el2 = document.querySelector(".pair2#choice2");
+            el1.classList.add("wrong");
+            el2.classList.add("right");
+        }
+	</script>
+</body>
+</html>
+

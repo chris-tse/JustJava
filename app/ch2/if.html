@@ -33,39 +33,27 @@
 
 		<h2>Practice</h2>
 
-		<p>Here's a tool you can use when doing the practice problems below. Click the boolean values to toggle them, and click the operator in the middle to switch between <code class="language-java">&&</code> and <code class="language-java">||</code>. The result will be shown below.</p>
-
-		<div class="toolcont">
-			<p class="tip">Try out different combinations and see what happens!</p>
-
-			<span class="toolwrap" onclick=changeA();><code class="tool token boolean" id="a">true</code></span> <span class="toolwrap" onclick=changeOp();><code class="tool" id="op">||</code></span> <span class="toolwrap" onclick=changeB()><code class="tool token boolean" id="b";>false</code></span>
-			<br/>
-			<code class="tool full">Result: <span id="out">false</span></code>
-		</div>
 
 		<section class="problems">
-			<p>In the following pairs, which of them evaluate to <code class="language-java">true</code>?</p>
+			<p>After running the following block of code, what will be the output?</p>
+			<pre class="language-java"><code class="language-java">int grade = 80;
+if (grade >= 50) {
+	System.out.println("Pass");
+}
+if (grade < 50) {
+	System.out.println("Fail");
+}</code></pre>
 			<div class="mc-pair">
 				<div class="pair1" id="choice1" onclick=revealAnswer1();>
-                    <pre class="language-java"><code class="language-java">(2 < 3) && (4 > 3)</code></pre>
+                    <pre class="language-java"><code class="language-java">Pass</code></pre>
                     <i class="fa fa-check" aria-hidden="true"></i>
                 </div>
                 <div class="pair1" id="choice2" onclick=revealAnswer1();>
-                    <pre class="language-java"><code class="language-java">(7 < 1) && (5 > 2)</code></pre>
+                    <pre class="language-java"><code class="language-java">Fail</code></pre>
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
 			</div>
 			<hr>
-			<div class="mc-pair">
-				<div class="pair2" id="choice1" onclick=revealAnswer2();>
-                    <pre class="language-java"><code class="language-java">(9 < 3) || (1 > 9)</code></pre>
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </div>
-                <div class="pair2" id="choice2" onclick=revealAnswer2();>
-                    <pre class="language-java"><code class="language-java">(7 < 1) || (5 > 2)</code></pre>
-                    <i class="fa fa-check" aria-hidden="true"></i>
-                </div>
-			</div>
 		</section>
 		<div class="nav">
 			<a href="andor.html" class="btn btn-green">Next: if statement <i class="fa fa-angle-right" aria-hidden="true"></i></a>

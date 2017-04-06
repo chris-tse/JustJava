@@ -166,15 +166,7 @@ boolean d = a || b;</code></pre>
 		}
 
 		function evalOut() {
-			out.innerHTML = (op.innerHTML === "&amp;&amp;" ? (a.innerHTML == "true") && (b.innerHTML == "true") : (a.innerHTML == "true") || (b.innerHTML == "true"))
-			// let aval = a.options[a.selectedIndex].value;
-			// let bval = b.options[b.selectedIndex].value;
-			// let opval = op.options[op.selectedIndex].value;
-			// console.log("aval: " + aval);
-			// console.log("opval: " + opval);
-			// console.log("bval: " + bval);
-
-			// out.innerHTML = (opval == "0" ? (aval == "1") && (bval == "1") : (aval == "1") || (bval == "1"));
+			out.innerHTML = (op.innerHTML === "&amp;&amp;" ? (a.innerHTML == "true") && (b.innerHTML == "true") : (a.innerHTML == "true") || (b.innerHTML == "true"))	
 		}
 
 		function revealAnswer1() {

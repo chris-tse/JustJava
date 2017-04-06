@@ -4,60 +4,91 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Learn Java - 2.4 if/else statements</title>
+	<title>Learn Java - 2.4 else and else if statements</title>
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/general.css">
 	<link rel="stylesheet" href="../css/prism.css">
 	<script src="../js/prism.js"></script>
     <script src="https://use.fontawesome.com/529e3dbb41.js"></script>
+	<style>
+		@media (min-width: 750px) {
+			.container .mc-pair .pair1 {
+				width: 24.5%;
+			}
+		}
+	</style>
 </head>
 <body>
 	<main class="container group">
-		<h1 class="title">if/else statements</h1>
+		<h1 class="title">else and else if statements</h1>
 		<a href="../index.html" class="toc"><i class="fa fa-angle-left" aria-hidden="true"></i> Back to Table of Contents</a>
-		<p>Now that we've covered ways to evaluate logical expressions, we can move on to actually incorporating them into our programs to make decisions.</p>
+		<p>With <code class="language-java">if</code> statements we can make certain decisions in our program based on certain conditions. If we look at the practice problem from the previous section, we checked <code class="language-java">if (grade >= 50)</code> and <code class="language-java">if (grade < 50)</code> to determine is it was a passing or failing grade. However, this creates extra unnecessary work for the program since if either one is false, it implies the other.</p>
 
-		<p>Here is the general syntax of an <code class="language-java">if</code> statement in Java:</p>
+		<p>We can resolve this issue by using <code class="language-java">else</code> statements. The general structure of an if/else statement is as follows:</p>
 
 		<pre class="language-java"><code class="language-java">if (condition) {
-	// Your code here
+	// Executes if condition was true and ignores the else block
+} else {
+	// Executes if condition was false and ignores the block above		
 }</code></pre>
 
-		<p>When using an <code class="language-java">if</code> statement, the program will first evaluate the expression inside the parentheses, which should return a <code class="language-java">boolean</code>. If it evaluates as <code class="language-java">true</code> the program will then execute the block of code inside the curly braces. If <code class="language-java">false</code>, the program will skip the block of code completely.</p>
+		<p>By using the <code class="language-java">else</code> statement we can save the program from having to evaluate a second condition. While this may not seem like much, when you have many conditions to check throughout your program they begin to add up. Furthermore, the if/else structure makes more logical sense and makes reading the code a lot easier.</p>
 
-		<p>Here's a short program demonstrating the use of an <code class="language-java">if</code> statement:</p>
+		<p>Here's the same example from the previous section, except using <code class="language-java">else</code> for the under 21 condition.</p>
 
-		<pre data-src="IfExample.java"></pre>
+		<pre data-src="IfElseExample.java"></pre>
 
-		<p><code class="language-java">if</code> statements are commonly used in programs to check whether some prior conditions have been met before executing some code. For example, checking whether a user has entered a properly formatted email address before registering them to your service.</p>
+		<p>The example above involves only two states: 21 and above, or below. If we have a situation where there is more than two possible states of a condition, we can chain another <code class="language-java">if</code> statement after each <code class="language-java">else</code>.</p>
+
+		<pre class="language-java"><code class="language-java">if (condition1) {
+	// Executes if condition1 is true and skips the rest
+} else if (condition2) { 		
+	// Executes if condition2 is true and skips the rest
+} else {
+	// Executes if none of the above conditions were true		
+}</code></pre>
+
+		<p>You can continue chaining as many <code class="language-java">else if</code> statements as needed. With lots of conditions to check, it may look messy, and we'll cover a different way to check several conditions using the <code class="language-java">switch</code> statement.</p>
 
 		<h2>Practice</h2>
 
 
 		<section class="problems">
 			<p>After running the following block of code, what will be the output?</p>
-			<pre class="language-java"><code class="language-java">int grade = 80;
-if (grade >= 50) {
-	System.out.println("Pass");
-}
-if (grade < 50) {
-	System.out.println("Fail");
+			<pre class="language-java"><code class="language-java">int grade = 75;
+
+if (grade >= 90) {
+	System.out.println("A");
+} else if (grade >= 80) {
+	System.out.println("B");
+} else if (grade >= 70) {
+	System.out.println("C");
+} else {
+	System.out.println("D");
 }</code></pre>
 			<div class="mc-pair">
 				<div class="pair1" id="choice1" onclick=revealAnswer1();>
-                    <pre class="language-java"><code class="language-java">Pass</code></pre>
-                    <i class="fa fa-check" aria-hidden="true"></i>
+                    <pre class="language-java"><code class="language-java">A</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
                 <div class="pair1" id="choice2" onclick=revealAnswer1();>
-                    <pre class="language-java"><code class="language-java">Fail</code></pre>
+                    <pre class="language-java"><code class="language-java">B</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+				<div class="pair1" id="choice3" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">C</code></pre>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+				<div class="pair1" id="choice4" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">D</code></pre>
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
 			</div>
 			<hr>
 		</section>
 		<div class="nav">
-			<a href="else.html" class="btn btn-green">Next: if/else statement <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-			<a class="btn btn-grey" href="andor.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: And / Or</a>
+			<a href="ternary.html" class="btn btn-green">Next: Ternary Operator <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+			<a class="btn btn-grey" href="if.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: if statement</a>
 		</div>
 	</main>
 
@@ -65,8 +96,12 @@ if (grade < 50) {
 		function revealAnswer1() {
             let el1 = document.querySelector(".pair1#choice1");
             let el2 = document.querySelector(".pair1#choice2");
-            el1.classList.add("right");
+            let el3 = document.querySelector(".pair1#choice3");
+            let el4 = document.querySelector(".pair1#choice4");
+            el3.classList.add("right");
+            el1.classList.add("wrong");
             el2.classList.add("wrong");
+            el4.classList.add("wrong");
         }
 	</script>
 </body>

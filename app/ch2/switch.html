@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Learn Java - 2.5 Ternary Operator</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/general.css">
+	<link rel="stylesheet" href="../css/prism.css">
+	<script src="../js/prism.js"></script>
+    <script src="https://use.fontawesome.com/529e3dbb41.js"></script>
+</head>
+<body>
+	<main class="container group">
+
+		<h1 class="title">Switch Statement</h1>
+		
+		<a href="../index.html" class="toc"><i class="fa fa-angle-left" aria-hidden="true"></i> Back to Table of Contents</a>
+		
+		<p>While we can chain multiple <code class="language-java">if / else if</code> blocks together to check for multiple outcomes of a condition as shown in a previous section, there is a way to do so with more concise code using the <code class="language-java">switch</code> statement.</p>
+
+		<p>The syntax is as follows:</p>
+		
+		<pre class="language-java"><code class="language-java">switch (condition) {
+	case a:
+		// if condition == a, do something
+		break;
+	case b:
+		// else if condition == b, do something else
+		break;
+	default:
+		// executes if condition was not a nor b	
+}</code></pre>
+
+		<p>The difference with a <code class="language-java">switch</code> statement is that instead of checking true or false in the <code class="language-java">condition</code>, you are checking whether <code class="language-java">condition</code> matches <code class="language-java">a</code> or <code class="language-java">b</code>. You can have as many cases as needed. The switch statement can check <code class=language-java">byte</code>, <code class="language-java">short</code>, <code class="language-java">char</code>, and <code class="language-java">int</code> primitive types and their respective wrapper classes along with <code class="language-java">String</code> types.</p>
+		
+		<p>Here is a sample program to generate a comment based on the letter grade of a student:</p>
+
+		<pre data-src="SwitchExample.java"></pre>
+
+		<p>Since <code class="language-java">grade</code> was set to <code class="language-java">'B'</code> at the start, the second case gets executed and the output is</p>
+
+		<pre class="language-java"><code class="language-java">Very Good</code></pre>
+
+		<h2>Practice</h2>
+		<section class="problems">
+			<p>Consider the following <code class="language-java">switch</code> statement. What will be the output?</p>
+
+			<pre class="language-java"><code class="language-java">int day = 3;
+switch (day) {
+	case 1:
+		System.out.println("Monday");
+		break;
+	case 2:
+		System.out.println("Tuesday");
+		break;
+	case 3:
+		System.out.println("Wednesday");
+		break;
+	case 4:
+		System.out.println("Thursday");
+		break;
+	case 5:
+		System.out.println("Friday");
+		break;
+	case 6:
+		System.out.println("Saturday");
+		break;
+	case 7: 
+		System.out.println("Sunday");
+		break;
+	default:
+		System.out.println("Invalid day");
+}</code></pre>
+
+			<div class="mc-pair">
+				<div class="pair1" id="choice1" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">Wednesday</code></pre>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+                <div class="pair1" id="choice2" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">Friday</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+				<div class="pair1" id="choice3" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">Monday</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+				<div class="pair1" id="choice4" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">Saturday</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+			</div>
+			<hr>
+			<p>Congratulations, you have completed chapter 2. You have learned how to change the flow of a program through the use of <code class="language-java">if</code>, <code class="language-java">else</code>, and <code class="language-java">switch</code> statements, and also through the use of the ternary operator. In the next chapter, we'll learn about how to do make the program execute code over and over again with loops.</p>
+		</section>
+		<div class="nav">
+			<a href="../ch3/loops.html" class="btn btn-green">Next: Chapter 3: Loops <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+			<a class="btn btn-grey" href="ternary.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: Ternary Operator</a>
+		</div>
+
+	</main>
+
+	<script>
+        function revealAnswer1() {
+            let el1 = document.querySelector(".pair1#choice1");
+            let el2 = document.querySelector(".pair1#choice2");
+			let el3 = document.querySelector(".pair1#choice3");
+			let el4 = document.querySelector(".pair1#choice4");
+
+			el1.classList.add("right");
+			el2.classList.add("wrong");
+			el3.classList.add("wrong");
+			el4.classList.add("wrong")
+        }
+	</script>
+</body>
+</html>

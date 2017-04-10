@@ -15,17 +15,19 @@
 	<main class="container group">
 		<h1 class="title">Ternary Operator</h1>
 		<a href="../index.html" class="toc"><i class="fa fa-angle-left" aria-hidden="true"></i> Back to Table of Contents</a>
-		<p>In computer science, a ternary operator is an operator that takes three arguments in a single line of code, the Java ternary operator let's you assign a value to a variable based on a boolean expression — either a boolean field, or a statement that evaluates to a boolean result. </p>
+		<p>Now that we've covered how to make <code class="language-java">if</code> statements more efficient using <code class="language-java">else</code>, we can look at a more concise way of making decisions using something called the ternary operator.</p>
 
-		<p>The syntax of ternary operator: </p>
-		<pre class="language-java"><code class="language-java">condition ? expre1 : expr2;</code></pre>
+		<p>The syntax of the ternary operator is as follows: </p>
+		<pre class="language-java"><code class="language-java">(condition ? expr1 : expr2);</code></pre>
 
 
-		<p>If condition is true, the operator returns the value of expr1; otherwise, it returns the value of expr2. For example, if you want to compair the value a and b, and return small value, you can do this:</p>
+		<p>If the condition is true, the expression returns the value of <code class="language-java">expr1</code>. Otherwise, it returns the value of <code class="language-java">expr2</code>. For example, if you want to compare the value of two integers, and store the smaller value into <code class="language-java">min</code>, you can do this:</p>
 
-		<pre class="language-java"><code class="language-java"> a > b ? b : a ;</code></pre>
+		<pre class="language-java"><code class="language-java">int a = 3;
+int b = 9;
+int min = ( a &lt; b ? a : b);</code></pre>
 
-		<p>The condition statement is a > b , if a > b is <code class="language-java">true</code>, it will return expression 1 which is b, if the condition is <code class="language-java">false</code>, it will return the expression 2 which is a.
+		<p>The condition statement is <code class="language-java">a &lt; b</code>, and if it  is <code class="language-java">true</code>, it will return <code class="language-java">a</code>, otherwise it will return <code class="language-java">b</code>.
 
 		<p>Below are some examples that demonstrating some basic example using ternary operator
 		<pre class="language-java"><code class="language-java">// if (a+b) great than c, return a, else return b
@@ -68,8 +70,8 @@ int result = (a+b) > c ? a : b;
 			</div>
 		</section>
 		<div class="nav">
-			<a href="andor.html" class="btn btn-green">Next: And / Or <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-			<a class="btn btn-grey" href="flowcontrol.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: Chapter 2 Introduction</a>
+			<a href="switch.html" class="btn btn-green">Next: Switch <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+			<a class="btn btn-grey" href="else.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: else and else if</a>
 		</div>
 
 	</main>

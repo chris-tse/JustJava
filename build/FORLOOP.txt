@@ -1,0 +1,45 @@
+A loop statement allows us to execute a statement or group of statements multiple times and following is the general form of a loop statement in most of the programming languages
+
+The /code for  code/ statement provides a compact way to iterate over a range of values. Programmers often refer to it as the "for loop" because of the way in which it repeatedly loops until a particular condition is satisfied. The general form of the for statement can be expressed as follows:
+
+/code for (initialization; termination;
+     increment) {
+    statement(s)
+}
+code/
+
+When using this version of the for statement, keep in mind that:
+
+1:The initialization expression initializes the loop; it's executed once, as the loop begins.
+2:When the termination expression evaluates to false, the loop terminates.
+3:The increment expression is invoked after each iteration through the loop; it is perfectly acceptable for this expression to increment or decrement a value.
+
+The following program, ForDemo, uses the general form of the for statement to print the numbers 1 through 10 to standard output:
+
+
+/code
+class ForDemo {
+    public static void main(String[] args){
+         for(int i=1; i<11; i++){
+              System.out.println("Count is: " + i);
+         }
+    }
+}
+
+code/
+
+
+The output of this program is:
+/code
+Count is: 1
+Count is: 2
+Count is: 3
+Count is: 4
+Count is: 5
+Count is: 6
+Count is: 7
+Count is: 8
+Count is: 9
+Count is: 10
+/code
+

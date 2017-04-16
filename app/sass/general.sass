@@ -1,3 +1,5 @@
+$btn-green: #2e9c33
+
 *
 	box-sizing: border-box !important
 
@@ -18,9 +20,9 @@
 		text-decoration: none
 
 	.title
-	    font-size: 2rem
-	    width: 100%
-	    padding: 15px 0px
+		font-size: 2rem
+		width: 100%
+		padding: 15px 0px
 
 	p > code.language-java, li > code.language-java
 		font-size: 0.8em
@@ -38,12 +40,16 @@
 			margin-top: 8px
 
 		.btn-green
-			background: #2e9c33
+			background: $btn-green
 			color: white
+			&:hover
+				background: darken($btn-green, 10%)
 
 		.btn-grey
 			background: #eee
 			color: #222
+			&:hover
+				background: #ddd
 
 .problems
 	margin: 20px auto
@@ -111,7 +117,7 @@
 			font-size: 0.9rem
 		.mc-pair
 			.pair1, .pair2, .pair3
-				width: 49%;
+				width: 49%
 				display: inline-block
 		.title
 			font-size: 1.4rem

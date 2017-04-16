@@ -93,6 +93,7 @@ gulp.task('clean', function() {
 gulp.task('build-copy', ['clean'], function() {
     gulp.src(['app/ch1/*.html', 'app/ch1/*.java']).pipe(gulp.dest('build/ch1/'));
     gulp.src(['app/ch2/*.html', 'app/ch2/*.java']).pipe(gulp.dest('build/ch2/'));
+    gulp.src(['app/ch3/*.html', 'app/ch3/*.java']).pipe(gulp.dest('build/ch3/'));
     gulp.src(['app/index.html', 'app/test.html']).pipe(gulp.dest('build/'));
     gulp.src('app/css/**/*.css').pipe(gulp.dest('build/css/'));
     gulp.src('app/js/*.js').pipe(gulp.dest('build/js/'));

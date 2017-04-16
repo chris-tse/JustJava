@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Learn Java - 2.3 if statements</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/general.css">
+	<link rel="stylesheet" href="../css/prism.css">
+	<script src="../js/prism.js"></script>
+    <script src="https://use.fontawesome.com/529e3dbb41.js"></script>
+</head>
+<body>
+	<main class="container group">
+		<h1 class="title">if statements</h1>
+		<a href="../index.html" class="toc"><i class="fa fa-angle-left" aria-hidden="true"></i> Back to Table of Contents</a>
+		<p>Now that we've covered ways to evaluate logical expressions, we can move on to actually incorporating them into our programs to make decisions.</p>
+
+		<p>Here is the general syntax of an <code class="language-java">if</code> statement in Java:</p>
+
+		<pre class="language-java"><code class="language-java">if (condition) {
+	// Your code here
+}</code></pre>
+
+		<p>When using an <code class="language-java">if</code> statement, the program will first evaluate the expression inside the parentheses, which should return a <code class="language-java">boolean</code>. If it evaluates as <code class="language-java">true</code> the program will then execute the block of code inside the curly braces. If <code class="language-java">false</code>, the program will skip the block of code completely.</p>
+
+		<p>Here's a short program demonstrating the use of an <code class="language-java">if</code> statement:</p>
+
+		<pre data-src="IfExample.java"></pre>
+
+		<p><code class="language-java">if</code> statements are commonly used in programs to check whether some prior conditions have been met before executing some code. For example, checking whether a user has entered a properly formatted email address before registering them to your service.</p>
+
+		<h2>Practice</h2>
+
+
+		<section class="problems">
+			<p>After running the following block of code, what will be the output?</p>
+			<pre class="language-java"><code class="language-java">int grade = 80;
+if (grade >= 50) {
+	System.out.println("Pass");
+}
+if (grade < 50) {
+	System.out.println("Fail");
+}</code></pre>
+			<div class="mc-pair">
+				<div class="pair1" id="choice1" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">Pass</code></pre>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+                <div class="pair1" id="choice2" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">Fail</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+			</div>
+			<hr>
+		</section>
+		<div class="nav">
+			<a href="else.html" class="btn btn-green">Next: if/else statement <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+			<a class="btn btn-grey" href="andor.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: And / Or</a>
+		</div>
+	</main>
+
+	<script>
+		function revealAnswer1() {
+            let el1 = document.querySelector(".pair1#choice1");
+            let el2 = document.querySelector(".pair1#choice2");
+            el1.classList.add("right");
+            el2.classList.add("wrong");
+        }
+	</script>
+</body>
+</html>

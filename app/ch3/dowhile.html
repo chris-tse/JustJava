@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Learn Java - 3.1 For Loop</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/general.css">
+	<link rel="stylesheet" href="../css/prism.css">
+	<script src="../js/prism.js"></script>
+    <script src="https://use.fontawesome.com/529e3dbb41.js"></script>
+    
+</head>
+<body>
+	<main class="container group">
+		<h1 class="title">3.3 do While</h1>
+		   
+		<a href="../index.html" class="toc"><i class="fa fa-angle-left" aria-hidden="true"></i> Back to Table of Contents</a>
+		  
+		<p>The Java programming language also provides a <code class="language-java">do-while </code> statement, which can be expressed as follows:</p> 
+		 <pre class="language-java"><code class="language-java">do {
+	// your code here
+} while (expression);
+		</code> </pre>
+		<p>The difference between <code class="language-java">do-while </code>and <code class="language-java"> while </code> is that <code class="language-java">do-while </code> evaluates its expression at the bottom of the loop instead of the top. Therefore, the statements within the do block are always executed at least once 
+		</p>
+		 <p>Example:</p>
+		<pre class="language-java">
+		<code class="language-java">
+		int t =0;
+		 do {
+		         System.out.println(t);
+		         t++;
+		      }while( x < 10 );
+		</code></pre>
+		<p>So there will print:</p>
+		<pre class="language-java">
+		<code class="language-java">
+		0 1 2 3 4 5 6 7 8 9
+		</code></pre>
+
+		<h2>Practice</h2>
+
+
+		<section class="problems">
+			<p>After running the following block of code, what will be the output?</p>
+			<pre class="language-java"><code class="language-java">int x = 5;
+// pay attention to the condition statement
+for (int i = 0; i < 3; i++) {
+	x++;
+}
+System.out.println(x);</code></pre>
+			<div class="mc-pair">
+				<div class="pair1" id="choice1" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">6</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+                <div class="pair1" id="choice2" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">7</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+                <div class="pair1" id="choice3" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">8</code></pre>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+                <div class="pair1" id="choice4" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">9</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+			</div>
+			<hr>
+		</section>
+		<div class="nav">
+			<a href="while.html" class="btn btn-green">Next: While Loop <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+			<a class="btn btn-grey" href="loops.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: Chapter 3 Introduction</a>
+		</div>
+	</main>
+
+	<script>
+		function revealAnswer1() {
+            let el1 = document.querySelector(".pair1#choice1");
+            let el2 = document.querySelector(".pair1#choice2");
+            let el3 = document.querySelector(".pair1#choice3");
+            let el4 = document.querySelector(".pair1#choice4");
+            el1.classList.add("wrong");
+            el2.classList.add("wrong");
+            el3.classList.add("right");
+            el4.classList.add("wrong");
+        }
+	</script>
+</body>
+</html>

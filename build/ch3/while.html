@@ -85,12 +85,16 @@ while (x < 20) {
             	ans.classList.remove("hidden")
             	ans.classList.add("right-bg")
             	inp.classList.add("right-bg")
+            	inp.classList.remove("err-bg")
             	icon.classList.add("fa-check")
+            	icon.classList.remove("fa-times")
             } else {
             	err.classList.add("hidden")
             	ans.classList.remove("hidden")
             	ans.classList.add("err-bg")
+            	inp.classList.remove("right-bg")
             	icon.classList.add("fa-times")
+            	icon.classList.remove("fa-check")
             	inp.classList.add("err-bg")
             }
         }

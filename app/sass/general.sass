@@ -1,5 +1,6 @@
 $btn-green: #2e9c33
-
+$bg-green: #caf3ca
+$bg-red: #ffdfdf
 *
 	box-sizing: border-box !important
 
@@ -58,6 +59,78 @@ $btn-green: #2e9c33
 .problems
 	margin: 20px auto
 
+	.anskey
+		font-style: italic
+		padding: 10px
+		margin-top: 0
+		
+		.mono
+			font-style: normal
+			font-family: "Consolas", "Courier", monospace
+	
+	.ans-group
+		position: relative
+		display: table
+		width: 100%
+		padding: 10px
+		
+		.input-control
+			position: table-cell
+			float: left
+		
+		.ans-input
+			background-image: none
+			border: 1px solid #ccc
+			border-right: none
+			width: 75%
+			max-width: 350px
+			height: 40px
+			padding: 10px 15px
+			border-radius: 4px
+			border-top-right-radius: 0
+			border-bottom-right-radius: 0
+			box-shadow: inset 0 1px 1px rgba(0,0,0,.075)
+			line-height: 1.4
+			transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s
+			font-family: "Consolas", "Courier", monospace
+		
+		.ans-btn
+			width: 25%
+			max-width: 100px
+			font-size: 0.9rem
+			line-height: 1
+			cursor: pointer
+			height: 40px
+			padding: 10px 15px
+			margin-left: -1px
+			background-color: $btn-green
+			color: white
+			border: none
+			border-radius: 4px
+			border-top-left-radius: 0
+			border-bottom-left-radius: 0
+			&:hover
+				background-color: darken($btn-green, 10%)
+	.err-bg
+		background-color: $bg-red
+
+		.fa
+			color: red
+
+	.right-bg
+		background-color: $bg-green
+		
+		.fa
+			color: green
+			
+	.error
+		padding: 10px
+		color: red
+		font-style: italic
+		margin-top: 0
+
+	.hidden
+		display: none
 // Practice problem
 .mc-pair
 	text-align: center
@@ -83,12 +156,12 @@ $btn-green: #2e9c33
 
 
 .right
-	background: #caf3ca !important
+	background: $bg-green !important
 	.fa
 		color: green
 		display: inline-block
 .wrong
-	background: #f5cbcb !important
+	background: $bg-red !important
 	.fa
 		color: red
 		display: inline-block

@@ -47,31 +47,20 @@
 
 
 		<section class="problems">
-			<p>After running the following block of code, what will be the output?</p>
+			<p>After running the following block of code, what will be the output? Type the answer into the box below.</p>
 			<pre class="language-java"><code class="language-java">int x = 10;
 while (x < 20) {
 	System.out.print(x + " ");
 	x = x + 2;
 }
-</code></code></pre>
-			<div class="mc-pair">
-				<div class="pair1" id="choice1" onclick=revealAnswer1();>
-                    <pre class="language-java"><code class="language-java">6</code></pre>
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </div>
-                <div class="pair1" id="choice2" onclick=revealAnswer1();>
-                    <pre class="language-java"><code class="language-java">7</code></pre>
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </div>
-                <div class="pair1" id="choice3" onclick=revealAnswer1();>
-                    <pre class="language-java"><code class="language-java">8</code></pre>
-                    <i class="fa fa-check" aria-hidden="true"></i>
-                </div>
-                <div class="pair1" id="choice4" onclick=revealAnswer1();>
-                    <pre class="language-java"><code class="language-java">9</code></pre>
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </div>
+</code></pre>
+
+			<div class="ans-group">
+				<input type="text" id="answer" class="ans-input input-control">
+				<button class="ans-btn input-control" onclick="checkAns()">Check</button>
 			</div>
+			<p class="hidden error err-bg">Please input an answer</p>
+			<p class="anskey hidden">Answer: <i class="fa"></i><br><span class="mono">10 12 14 16 18</span></p>
 			<hr>
 		</section>
 		<div class="nav">
@@ -81,15 +70,28 @@ while (x < 20) {
 	</main>
 
 	<script>
-		function revealAnswer1() {
-            let el1 = document.querySelector(".pair1#choice1");
-            let el2 = document.querySelector(".pair1#choice2");
-            let el3 = document.querySelector(".pair1#choice3");
-            let el4 = document.querySelector(".pair1#choice4");
-            el1.classList.add("wrong");
-            el2.classList.add("wrong");
-            el3.classList.add("right");
-            el4.classList.add("wrong");
+		function checkAns() {
+			let inp = document.querySelector(".ans-group");
+			let ans = document.querySelector(".anskey");
+			let err = document.querySelector(".error");
+			let icon = document.querySelector(".anskey .fa");
+			
+            if(document.getElementById("answer").value === "") {
+            	err.classList.remove("hidden")
+            	inp.classList.add("err-bg")
+            } else if (document.getElementById("answer").value === "10 12 14 16 18") {
+            	err.classList.add("hidden")
+            	ans.classList.remove("hidden")
+            	ans.classList.add("right-bg")
+            	inp.classList.add("right-bg")
+            	icon.classList.add("fa-check")
+            } else {
+            	err.classList.add("hidden")
+            	ans.classList.remove("hidden")
+            	ans.classList.add("err-bg")
+            	icon.classList.add("fa-times")
+            	inp.classList.add("err-bg")
+            }
         }
 	</script>
 </body>

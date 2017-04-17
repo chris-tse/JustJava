@@ -36,35 +36,24 @@
 		<pre data-src="WhileExample.java"></pre>
 
 		<p>This results in the same output as before:</p>
-		<pre class="language-java"><code>1
-2
-3</code></pre>
+		<pre class="language-java"><code>1 2 3</code></pre>
 
-		<p>So why </p>
-		<ol>
-			<li>The loop runs the setup part, initializing the counter variable <code class="language-java">int i = 1;</code>.</li>
-			<li>The code inside the loop executes, printing out <code class="language-java">i</code> which is 1.</li>
-			<li>Now that the inner code is all done, the incrementer will be called, <code class="language-java">i++</code> which increments <code class="language-java">i</code> to 2.</li>
-			<li>The loop then checks if the condition <code class="language-java">i <= 3</code> is still true. If so it will execute the inner code again. Since <code class="language-java">2 <= 3</code> is true, it will execute the inner code.</li>
-			<li>Repeat steps 2 - 4, updating the value of <code class="language-java">i</code> as it gets incremented.</li>
-			<li>After the third run through, <code class="language-java">i++</code> makes <code class="language-java">i</code> become 4. When the condition is checked, <code class="language-java">4 <= 3</code> is no longer true, and the loop will terminate, preventing it from printing out 4.</li>
-		</ol>
+		<p>So why are there different ways of writing loops when they accomplish the same thing? </p>
 
-		<p>Just for comparison, here is a program which does the same thing, but without the use of loops:</p>
-
-		<pre data-src="NoForExample.java"></pre>
+		<p>A <code class="language-java">for</code> loop has an setup and incrementer, and so it makes more sense to use it when you want to do something for a specific number of times. The <code class="language-java">while</code> loop is a bit more open on what the condition checks, and the condition may not always depend on the number of times the loop is run.</p>
+		
 
 		<h2>Practice</h2>
 
 
 		<section class="problems">
 			<p>After running the following block of code, what will be the output?</p>
-			<pre class="language-java"><code class="language-java">int x = 5;
-// pay attention to the condition statement
-for (int i = 0; i < 3; i++) {
-	x++;
+			<pre class="language-java"><code class="language-java">int x = 10;
+while (x < 20) {
+	System.out.print(x + " ");
+	x = x + 2;
 }
-System.out.println(x);</code></pre>
+</code></code></pre>
 			<div class="mc-pair">
 				<div class="pair1" id="choice1" onclick=revealAnswer1();>
                     <pre class="language-java"><code class="language-java">6</code></pre>

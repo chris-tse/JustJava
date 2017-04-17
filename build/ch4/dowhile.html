@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Learn Java - 3.3 Do While Loops</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/general.css">
+	<link rel="stylesheet" href="../css/prism.css">
+	<script src="../js/prism.js"></script>
+    <script src="https://use.fontawesome.com/529e3dbb41.js"></script>
+    
+</head>
+<body>
+	<main class="container group">
+		<h1 class="title">3.3 Do While Loops</h1>
+		   
+		<a href="../index.html" class="toc"><i class="fa fa-angle-left" aria-hidden="true"></i> Back to Table of Contents</a>
+		  
+		<p>The last type of loop we will be looking at is the  <code class="language-java">do while</code> loop, and the syntax is as follows:</p> 
+		 <pre class="language-java"><code class="language-java">do {
+	// your code here
+} while (condition); // note the semi-colon here
+		</code> </pre>
+		<p>You will notice a difference between the <code class="language-java">do while</code> and <code class="language-java">while</code> loop, and it is that it evaluates the condition at the bottom of the loop instead of the top. Therefore, the statements within the do block are always executed at least once regardless of the condition.</p>
+
+		<p>A way to demonstrate this is to first take a look at the following <code class="language-java">while</code> loop:</p>
+		
+		<pre class="language-java"><code class="language-java">while (false) { // condition is false, does not enter loop
+    System.out.println("Hello");
+}</code></pre>
+
+		<p>Since the condition is false, the loop will never be entered and no output will be shown. However, compare that to this <code class="languge-java">do while</code> loop:</p>
+
+		<pre class="language-java"><code class="language-java">do {
+    System.out.println("Hello");
+} while (false); // only checks the condition after running once</code></pre>
+
+		<p>Since the inner code executes once before checking the condition, we will get <code class="language-java">Hello</code> output to the console.</p>
+		
+		<h2>Practice</h2>
+
+		<section class="problems">
+			<p>After running the following block of code, what will be the output? Click on the correct block.</p>
+			<pre class="language-java"><code class="language-java">int x = 3;
+
+do {
+    System.out.print(x);
+    x++;
+} while ( x < 1 );</code></pre>
+			<div class="mc-pair">
+				<div class="pair1" id="choice1" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">1</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+                <div class="pair1" id="choice2" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">2</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+                <div class="pair1" id="choice3" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">3</code></pre>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+                <div class="pair1" id="choice4" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">No output</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+			</div>
+			<hr>
+		</section>
+		<p>Congratulations, you have reached the end of Chapter 3. Now that we have covered loops, we can move on our first basic data structure: the array.</p>
+		<div class="nav">
+			<a href="../ch4/arrays.html" class="btn btn-green">Next: Chapter 4 <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+			<a class="btn btn-grey" href="while.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: While Loops</a>
+		</div>
+	</main>
+
+	<script>
+		function revealAnswer1() {
+            let el1 = document.querySelector(".pair1#choice1");
+            let el2 = document.querySelector(".pair1#choice2");
+            let el3 = document.querySelector(".pair1#choice3");
+            let el4 = document.querySelector(".pair1#choice4");
+            el1.classList.add("wrong");
+            el2.classList.add("wrong");
+            el3.classList.add("right");
+            el4.classList.add("wrong");
+        }
+	</script>
+</body>
+</html>

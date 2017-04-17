@@ -10,54 +10,35 @@
 	<link rel="stylesheet" href="../css/prism.css">
 	<script src="../js/prism.js"></script>
     <script src="https://use.fontawesome.com/529e3dbb41.js"></script>
-    <style>
-    	@media (min-width: 750px) {
-    		.container .mc-pair .pair1 {
-	    		width: 24.5%;
-	    	}
-    	}
-    	
-    </style>
+    
 </head>
 <body>
 	<main class="container group">
-		<h1 class="title">For Loops</h1>
+		<h1 class="title">3.3 do While</h1>
+		   
 		<a href="../index.html" class="toc"><i class="fa fa-angle-left" aria-hidden="true"></i> Back to Table of Contents</a>
-		<p>The first type of loop we will cover is the <code class="language-java">for</code> loop. The general syntax of this loop is as follows:</p>
-
-		<pre class="language-java"><code class="language-java">for (setup ; condition ; incrementer ) {
-	// Your code here
-}</code></pre>
-
-		<p>There are three main parts to a for loop:</p>
-		<ol>
-			<li><strong>The setup</strong>: This statement is run only once at the very beginning of the loop and is usually used to initialize the counter of the loop.</li>
-			<li><strong>The condition</strong>: When the condition evaluates to <code class="language-java">false</code>, the loop will terminate.</li>
-			<li><strong>The incrementer</strong>: The last part is the statement which increments the counter variable from the initialization. This statement is called each time the loop finishes executing its inner code.</li>
-		</ol>
-
-		<p>Here's a short program which uses a for loop to print out the numbers 1 through 3:</p>
-
-		<pre data-src="ForExample.java"></pre>
-
-		<p>Which will result in the output:</p>
-		<pre class="language-java"><code>1
-2
-3</code></pre>
-
-		<p>Let's go over how the loop is executed step by step:</p>
-		<ol>
-			<li>The loop runs the setup part, initializing the counter variable <code class="language-java">int i = 1;</code>.</li>
-			<li>The code inside the loop executes, printing out <code class="language-java">i</code> which is 1.</li>
-			<li>Now that the inner code is all done, the incrementer will be called, <code class="language-java">i++</code> which increments <code class="language-java">i</code> to 2.</li>
-			<li>The loop then checks if the condition <code class="language-java">i <= 3</code> is still true. If so it will execute the inner code again. Since <code class="language-java">2 <= 3</code> is true, it will execute the inner code.</li>
-			<li>The steps repeat from step 2 again, this time printing out 2 since <code class="language-java">i</code> was incremented in step 3.</li>
-			<li>After the third run through, <code class="language-java">i++</code> makes <code class="language-java">i</code> become 4. When the condition is checked, <code class="language-java">4 <= 3</code> is no longer true, and the loop will terminate, preventing it from printing out 4.</li>
-		</ol>
-
-		<p>Just for comparison, here is a program which does the same thing, but without the use of loops:</p>
-
-		<pre data-src="NoForExample.java"></pre>
+		  
+		<p>The Java programming language also provides a <code class="language-java">do-while </code> statement, which can be expressed as follows:</p> 
+		 <pre class="language-java"><code class="language-java">do {
+	// your code here
+} while (expression);
+		</code> </pre>
+		<p>The difference between <code class="language-java">do-while </code>and <code class="language-java"> while </code> is that <code class="language-java">do-while </code> evaluates its expression at the bottom of the loop instead of the top. Therefore, the statements within the do block are always executed at least once 
+		</p>
+		 <p>Example:</p>
+		<pre class="language-java">
+		<code class="language-java">
+		int t =0;
+		 do {
+		         System.out.println(t);
+		         t++;
+		      }while( x < 10 );
+		</code></pre>
+		<p>So there will print:</p>
+		<pre class="language-java">
+		<code class="language-java">
+		0 1 2 3 4 5 6 7 8 9
+		</code></pre>
 
 		<h2>Practice</h2>
 

@@ -56,16 +56,16 @@ while (x < 20) {
 </code></pre>
 
 			<div class="ans-group">
-				<input type="text" id="answer" class="ans-input input-control">
-				<button class="ans-btn input-control" onclick="checkAns()">Check</button>
+				<input type="text" id="answer" class="ans-input input-control" onkeydown = "if (event.keyCode == 13) checkAns()">
+				<input type=button class="ans-btn input-control" onclick="checkAns()" id="checkbtn" value="Check"/>
 			</div>
 			<p class="hidden error err-bg">Please input an answer</p>
 			<p class="anskey hidden">Answer: <i class="fa"></i><br><span class="mono">10 12 14 16 18</span></p>
 			<hr>
 		</section>
 		<div class="nav">
-			<a href="while.html" class="btn btn-green">Next: While Loop <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-			<a class="btn btn-grey" href="loops.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: Chapter 3 Introduction</a>
+			<a href="dowhile.html" class="btn btn-green">Next: Do while Loops <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+			<a class="btn btn-grey" href="for.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: For Loops</a>
 		</div>
 	</main>
 
@@ -80,7 +80,7 @@ while (x < 20) {
             	err.classList.remove("hidden")
             	inp.classList.add("err-bg")
             	ans.classList.add("hidden")
-            } else if (document.getElementById("answer").value === "10 12 14 16 18") {
+            } else if (document.getElementById("answer").value.trim() === "10 12 14 16 18") {
             	err.classList.add("hidden")
             	ans.classList.remove("hidden")
             	ans.classList.add("right-bg")
@@ -99,6 +99,8 @@ while (x < 20) {
             	inp.classList.add("err-bg")
             }
         }
+
+        
 	</script>
 </body>
 </html>

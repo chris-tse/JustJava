@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Learn Java - 3.2 While Loops</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/general.css">
+	<link rel="stylesheet" href="../css/prism.css">
+	<script src="../js/prism.js"></script>
+    <script src="https://use.fontawesome.com/529e3dbb41.js"></script>
+    <style>
+    	@media (min-width: 750px) {
+    		.container .mc-pair .pair1 {
+	    		width: 24.5%;
+	    	}
+    	}
+    	
+    </style>
+</head>
+<body>
+	<main class="container group">
+		<h1 class="title">While Loops</h1>
+		<a href="../index.html" class="toc"><i class="fa fa-angle-left" aria-hidden="true"></i> Back to Table of Contents</a>
+		<p>The <code class="language-java">while</code> loop works the same way as a <code class="language-java">for</code> loop, but with slight changes:</p>
+
+		<pre class="language-java"><code class="language-java">while (condition) {
+	// Your code here
+}</code></pre>
+
+		<p>Again, the inner code will continue to execute while the condition is true and will terminate when it becomes false. However, there is no setup or incrementer for the counter variable. This means that we will have to initialize it outside the loop and increment it from within the loop.</p>
+
+		<p>Here is the example to print out the numbers 1 through 3 using a <code class="language-java">while</code> loop:</p>
+
+		<pre data-src="WhileExample.java"></pre>
+
+		<p>This results in the same output as before:</p>
+		<pre class="language-java"><code>1 2 3</code></pre>
+
+		<p>So why are there different ways of writing loops when they accomplish the same thing? </p>
+
+		<p>A <code class="language-java">for</code> loop has an setup and incrementer, and so it makes more sense to use it when you want to do something for a specific number of times. The <code class="language-java">while</code> loop is a bit more open on what the condition checks, and the condition may not always depend on the number of times the loop is run.</p>
+		
+
+		<h2>Practice</h2>
+
+
+		<section class="problems">
+			<p>After running the following block of code, what will be the output?</p>
+			<pre class="language-java"><code class="language-java">int x = 10;
+while (x < 20) {
+	System.out.print(x + " ");
+	x = x + 2;
+}
+</code></code></pre>
+			<div class="mc-pair">
+				<div class="pair1" id="choice1" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">6</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+                <div class="pair1" id="choice2" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">7</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+                <div class="pair1" id="choice3" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">8</code></pre>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+                <div class="pair1" id="choice4" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">9</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+			</div>
+			<hr>
+		</section>
+		<div class="nav">
+			<a href="while.html" class="btn btn-green">Next: While Loop <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+			<a class="btn btn-grey" href="loops.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: Chapter 3 Introduction</a>
+		</div>
+	</main>
+
+	<script>
+		function revealAnswer1() {
+            let el1 = document.querySelector(".pair1#choice1");
+            let el2 = document.querySelector(".pair1#choice2");
+            let el3 = document.querySelector(".pair1#choice3");
+            let el4 = document.querySelector(".pair1#choice4");
+            el1.classList.add("wrong");
+            el2.classList.add("wrong");
+            el3.classList.add("right");
+            el4.classList.add("wrong");
+        }
+	</script>
+</body>
+</html>

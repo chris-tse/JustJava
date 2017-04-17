@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Learn Java - 3.1 For Loop</title>
+	<title>Learn Java - 3.1 For Loops</title>
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/general.css">
 	<link rel="stylesheet" href="../css/prism.css">
@@ -41,17 +41,16 @@
 		<pre data-src="ForExample.java"></pre>
 
 		<p>Which will result in the output:</p>
-		<pre class="language-java"><code>1
-2
-3</code></pre>
+		<pre class="language-java"><code>1 2 3</code></pre>
 
 		<p>Let's go over how the loop is executed step by step:</p>
 		<ol>
 			<li>The loop runs the setup part, initializing the counter variable <code class="language-java">int i = 1;</code>.</li>
-			<li>The code inside the loop executes, printing out <code class="language-java">i</code> which is 1.</li>
+			<li>The loop checks whether the condition is true or false. If true, the inner code will run. If false, the loop terminates.</li>
+			<li>Since the condition was true. the code inside the loop executes, printing out <code class="language-java">i</code> which is 1.</li>
 			<li>Now that the inner code is all done, the incrementer will be called, <code class="language-java">i++</code> which increments <code class="language-java">i</code> to 2.</li>
-			<li>The loop then checks if the condition <code class="language-java">i <= 3</code> is still true. If so it will execute the inner code again. Since <code class="language-java">2 <= 3</code> is true, it will execute the inner code.</li>
 			<li>Repeat steps 2 - 4, updating the value of <code class="language-java">i</code> as it gets incremented.</li>
+			<li>On the second run, <code class="language-java">i</code> is 2, which makes the conditon <code class="language-java">2 <= 3</code> true. Same with the third run where <code class="language-java">i</code> is 3.</li>
 			<li>After the third run through, <code class="language-java">i++</code> makes <code class="language-java">i</code> become 4. When the condition is checked, <code class="language-java">4 <= 3</code> is no longer true, and the loop will terminate, preventing it from printing out 4.</li>
 		</ol>
 
@@ -63,7 +62,7 @@
 
 
 		<section class="problems">
-			<p>After running the following block of code, what will be the output?</p>
+			<p>After running the following block of code, what will be the output? Click on the correct block.</p>
 			<pre class="language-java"><code class="language-java">int x = 5;
 // pay attention to the condition statement
 for (int i = 0; i < 3; i++) {

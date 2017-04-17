@@ -70,17 +70,21 @@ while (x < 20) {
 	</main>
 
 	<script>
+		let answerArr = [10, 12, 14, 16, 18]
+		let inp = document.querySelector(".ans-group");
+		let ans = document.querySelector(".anskey");
+		let err = document.querySelector(".error");
+		let icon = document.querySelector(".anskey .fa");
+		
 		function checkAns() {
-			let inp = document.querySelector(".ans-group");
-			let ans = document.querySelector(".anskey");
-			let err = document.querySelector(".error");
-			let icon = document.querySelector(".anskey .fa");
+
+			let correct = check(document.getElementById("answer").value.trim().split(/\s+/).map(Number), answerArr)
 			
             if(document.getElementById("answer").value === "") {
             	err.classList.remove("hidden")
             	inp.classList.add("err-bg")
             	ans.classList.add("hidden")
-            } else if (document.getElementById("answer").value.trim() === "10 12 14 16 18") {
+            } else if ( correct ) {
             	err.classList.add("hidden")
             	ans.classList.remove("hidden")
             	ans.classList.add("right-bg")
@@ -98,6 +102,19 @@ while (x < 20) {
             	icon.classList.remove("fa-check")
             	inp.classList.add("err-bg")
             }
+        }
+
+        function check(inp, ans) {
+        	if (inp.length !== ans.length) {
+        		return false
+        	} else {
+        		for (let i = 0; i < inp.length; i++) {
+        			if (inp[i] !== ans[i]) {
+        				return false
+        			}
+        		}
+        		return true
+        	}
         }
 
         

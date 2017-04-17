@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Learn Java - 3.1 For Loops</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/general.css">
+	<link rel="stylesheet" href="../css/prism.css">
+	<script src="../js/prism.js"></script>
+    <script src="https://use.fontawesome.com/529e3dbb41.js"></script>
+    <style>
+    	@media (min-width: 750px) {
+    		.container .mc-pair .pair1 {
+	    		width: 24.5%;
+	    	}
+    	}
+    	
+    </style>
+</head>
+<body>
+	<main class="container group">
+		<h1 class="title">For Loops</h1>
+		<a href="../index.html" class="toc"><i class="fa fa-angle-left" aria-hidden="true"></i> Back to Table of Contents</a>
+		<p>The first type of loop we will cover is the <code class="language-java">for</code> loop. The general syntax of this loop is as follows:</p>
+
+		<pre class="language-java"><code class="language-java">for (setup ; condition ; incrementer ) {
+	// Your code here
+}</code></pre>
+
+		<p>There are three main parts to a for loop:</p>
+		<ol>
+			<li><strong>The setup</strong>: This statement is run only once at the very beginning of the loop and is usually used to initialize the counter of the loop.</li>
+			<li><strong>The condition</strong>: When the condition evaluates to <code class="language-java">false</code>, the loop will terminate.</li>
+			<li><strong>The incrementer</strong>: The last part is the statement which increments the counter variable from the initialization. This statement is called each time the loop finishes executing its inner code.</li>
+		</ol>
+
+		<p>Here's a short program which uses a for loop to print out the numbers 1 through 3:</p>
+
+		<pre data-src="ForExample.java"></pre>
+
+		<p>Which will result in the output:</p>
+		<pre class="language-java"><code>1 2 3</code></pre>
+
+		<p>Let's go over how the loop is executed step by step:</p>
+		<ol>
+			<li>The loop runs the setup part, initializing the counter variable <code class="language-java">int i = 1;</code>.</li>
+			<li>The loop checks whether the condition is true or false. If true, the inner code will run. If false, the loop terminates.</li>
+			<li>Since the condition was true. the code inside the loop executes, printing out <code class="language-java">i</code> which is 1.</li>
+			<li>Now that the inner code is all done, the incrementer will be called, <code class="language-java">i++</code> which increments <code class="language-java">i</code> to 2.</li>
+			<li>Repeat steps 2 - 4, updating the value of <code class="language-java">i</code> as it gets incremented.</li>
+			<li>On the second run, <code class="language-java">i</code> is 2, which makes the conditon <code class="language-java">2 <= 3</code> true. Same with the third run where <code class="language-java">i</code> is 3.</li>
+			<li>After the third run through, <code class="language-java">i++</code> makes <code class="language-java">i</code> become 4. When the condition is checked, <code class="language-java">4 <= 3</code> is no longer true, and the loop will terminate, preventing it from printing out 4.</li>
+		</ol>
+
+		<p>Just for comparison, here is a program which does the same thing, but without the use of loops:</p>
+
+		<pre data-src="NoForExample.java"></pre>
+
+		<h2>Practice</h2>
+
+
+		<section class="problems">
+			<p>After running the following block of code, what will be the output? Click on the correct block.</p>
+			<pre class="language-java"><code class="language-java">int x = 5;
+// pay attention to the condition statement
+for (int i = 0; i < 3; i++) {
+	x++;
+}
+System.out.println(x);</code></pre>
+			<div class="mc-pair">
+				<div class="pair1" id="choice1" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">6</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+                <div class="pair1" id="choice2" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">7</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+                <div class="pair1" id="choice3" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">8</code></pre>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+                <div class="pair1" id="choice4" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">9</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+			</div>
+			<hr>
+		</section>
+		<div class="nav">
+			<a href="while.html" class="btn btn-green">Next: While Loops <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+			<a class="btn btn-grey" href="loops.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: Chapter 3 Introduction</a>
+		</div>
+	</main>
+
+	<script>
+		function revealAnswer1() {
+            let el1 = document.querySelector(".pair1#choice1");
+            let el2 = document.querySelector(".pair1#choice2");
+            let el3 = document.querySelector(".pair1#choice3");
+            let el4 = document.querySelector(".pair1#choice4");
+            el1.classList.add("wrong");
+            el2.classList.add("wrong");
+            el3.classList.add("right");
+            el4.classList.add("wrong");
+        }
+	</script>
+</body>
+</html>

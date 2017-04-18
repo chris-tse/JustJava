@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Learn Java - 4.1 Array Basics</title>
+	<title>Learn Java - 4.2 Array Access and Modification</title>
 	<link rel="stylesheet" href="../css/normalize.css">
 	<link rel="stylesheet" href="../css/general.css">
 	<link rel="stylesheet" href="../css/prism.css">
@@ -13,7 +13,7 @@
 </head>
 <body>
 	<main class="container group">
-		<h1 class="title">Array Basics</h1>
+		<h1 class="title">Array Access and Modification</h1>
 		<a href="../index.html" class="toc"><i class="fa fa-angle-left" aria-hidden="true"></i> Back to Table of Contents</a>
 		<p>When writing programs, we need ways to manage and store data efficiently, accurately, and concisely. To do this, we use a wide variety of <em>data structures</em>. In this chapter we will be covering <strong>arrays</strong>, which is one of the most basic data structures, but has a wide range of uses.</p>
 
@@ -45,7 +45,7 @@ int booksOnRow5 = 15;</code></pre>
 			<div class="mc-pair">
 				<div class="pair1" id="choice1" onclick=revealAnswer1();>
                     <pre class="language-java"><code class="language-java">char[] array = {'1', '2', '3', '4'}</code></pre>
-                    <i class="fa fa-times" aria-hidden="true"></i>
+                    <i class="fa fa-check" aria-hidden="true"></i>
                 </div>
                 <div class="pair1" id="choice2" onclick=revealAnswer1();>
                     <pre class="language-java"><code class="language-java">char[] array = {'1', '2', 3, '4'}</code></pre>
@@ -65,8 +65,8 @@ int booksOnRow5 = 15;</code></pre>
 		function revealAnswer1() {
             let el1 = document.querySelector(".pair1#choice1");
             let el2 = document.querySelector(".pair1#choice2");
-            el1.classList.add("wrong");
-            el2.classList.add("right");
+            el1.classList.add("right");
+            el2.classList.add("wrong");
         }
 	</script>
 </body>

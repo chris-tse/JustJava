@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Learn Java - 4.2 Using Arrays</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/general.css">
+	<link rel="stylesheet" href="../css/prism.css">
+	<script src="../js/prism.js"></script>
+    <script src="https://use.fontawesome.com/529e3dbb41.js"></script>
+</head>
+<body>
+	<main class="container group">
+		<h1 class="title">Using Arrays</h1>
+		<a href="../index.html" class="toc"><i class="fa fa-angle-left" aria-hidden="true"></i> Back to Table of Contents</a>
+		<p>Now that we know how to create arrays, we can retrieve the values in them for other tasks or modify them to update the data they store.</p>
+
+		<h3>Reading from Arrays</h3>
+		<p>To access the individual values of an array, we use the square bracket notation with the <em>index</em> of the array in this manner:</p>
+		<pre class="language-java"><code class="language-java">int[] arr = {1, 2, 3};
+
+// Indices of arrays in Java start at 0
+System.out.println(arr[0]); // prints first position: 1
+System.out.println(arr[1]); // prints second position: 2
+System.out.println(arr[2]); // prints third position: 3</code></pre>
+
+		<p>We need to remember that in Java, the program counts the positions starting from 0, not 1. Since we covered loops in the previous chapter, we can print all the values of an array much more easily:</p>
+
+		<pre class="language-java"><code class="language-java">for (int i = 0; i < arr.length; i++) { // the length of an array can be called with the .length property
+	System.out.println(arr[i]);
+}</code></pre>
+
+		<p>Since the position starts from 0, the loop should start at 0 and go until 1 less than the length of the array (i.e. last position of array of length x is index x-1).</p>
+
+		<p>Using this looping technique, we can perform tasks using the values inside the array. If we use the example from the previous section with the bookshelf, we could calculate the total number of books using the number of books on each row.</p>
+
+		<pre class="language-java"><code class="language-java">int[] booksOnRow = {16, 19, 20, 18, 15};
+
+int totalBooks = 0; // initialize variable to hold number while summing
+for (int i = 0; i < arr.length; i++) {
+	totalBooks += booksOnRow[i]; // add the number of books 
+	                             // of each row to the running sum
+}
+
+System.out.println(totalBooks);</code></pre>
+
+		<h3>Changing Values in Arrays</h3>
+
+		<p>While this might work fine for a smaller program, what if we need to define a larger number of rows, or multiple bookshelves? We could modify the variable names with more numbers to keep track of which belongs where, but it gets messy very quickly.</p>
+
+		<p>What if we could store number of books on the bookshelf as a whole in one place? With arrays this is possible. Here's how you might define the same bookshelf from above with an array:</p>
+
+		<pre class="language-java"><code class="language-java">int[] booksOnRow = {16, 19, 20, 18, 15};</code></pre>
+
+		
+
+		<h2>Practice</h2>
+
+		<section class="problems">
+			<p>Which of the following declares a valid array? Click on the correct answer.</p>
+			<div class="mc-pair">
+				<div class="pair1" id="choice1" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">char[] array = {'1', '2', '3', '4'}</code></pre>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+                <div class="pair1" id="choice2" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">char[] array = {'1', '2', 3, '4'}</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+			</div>
+			<hr>
+		</section>
+		<p>In the next section, we will go over how to actually use these values, and also how to modify and change them.</p>
+		<div class="nav">
+			<a href="arrayaccess.html" class="btn btn-green">Next: Array Access and Modification <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+			<a class="btn btn-grey" href="arrays.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: Chapter 4 Introduction</a>
+		</div>
+	</main>
+
+	<script>
+		function revealAnswer1() {
+            let el1 = document.querySelector(".pair1#choice1");
+            let el2 = document.querySelector(".pair1#choice2");
+            el1.classList.add("right");
+            el2.classList.add("wrong");
+        }
+	</script>
+</body>
+</html>

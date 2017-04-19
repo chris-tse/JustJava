@@ -18,9 +18,10 @@
 		<p>When writing programs, we need ways to manage and store data efficiently, accurately, and concisely. To do this, we use a wide variety of <em>data structures</em>. In this chapter we will be covering <strong>arrays</strong>, which is one of the most basic data structures, but has a wide range of uses.</p>
 
 		<p>Here is the general structure of defining a basic array:</p>
-		<pre class="language-java"><code class="language-java">type[] variableName = {/* Comma separated values */};</code></pre>
 
-		<p>Once the type of the array has been defined, that array can only hold values of the same type.</p>
+		<pre class="language-java"><code class="language-java">type[] variableName = new type[length];</code></pre>
+
+		<p>This will initialize an array with <code class="language-java">length</code> values all set to 0. Once the type of the array has been defined, that array can only hold values of the same type and the length cannot be changed.</p>
 
 		<p>An array allows us to store multiple pieces of data in one place like a list. For example, let's say we have a bookshelf with 5 rows. There are 16 books on the first row, 19 books on the second row, 20 on the third, 18 on the fourth, and 15 on the last row. If we wanted to keep track of the number of books in each row, we might do something like this:</p>
 
@@ -34,29 +35,52 @@ int booksOnRow5 = 15;</code></pre>
 
 		<p>What if we could store number of books on the bookshelf as a whole in one place? With arrays this is possible. Here's how you might define the same bookshelf from above with an array:</p>
 
-		<pre class="language-java"><code class="language-java">int[] booksOnRow = {16, 19, 20, 18, 15};</code></pre>
+		<pre class="language-java"><code class="language-java">// initialize an array of integers of length 5
+int[] booksOnRow = new int[5];
 
-		
+booksOnRow[0] = 16; // set first position to 16
+booksOnRow[1] = 19; // set second position to 19
+booksOnRow[2] = 20; // set third position to 20
+booksOnRow[3] = 18; // set fourth position to 18
+booksOnRow[4] = 15; // set fifth position to 15</code></pre>
+
+		<p>We use indices to set individual values of an array. Note that the count of the position starts at 0 and not 1. We access the values using square brackets and the index of the value, and we can then treat it like a regular <code class="language-java">int</code> variable.</p>
+
+		<p>While this seems like just as much work as before, all the values are contained neatly within one variable rather than being spread out across dozens of individual variables. An example would be to make several arrays and name them according to their book genre or topic.</p>
+
+		<pre class="language-java"><code class="language-java">fantasy[0]; // books in first row of fantasy shelf
+mystery[2]; // books in third row of mystery shelf</code></pre>
+
+		<p>If we know all the values we want to set, we can use this shorthand way of initializing an array:</p>
+
+		<pre class="language-java"><code class="language-java">int[] booksOnRow = {16, 19, 20, 18, 15};</code></pre>
 
 		<h2>Practice</h2>
 
 		<section class="problems">
-			<p>Which of the following declares a valid array? Click on the correct answer.</p>
+			<p>What line of code would you write to change the number of books in the third row of the bookshelf to have 17 books instead of 20? Click on the correct answer.</p>
 			<div class="mc-pair">
 				<div class="pair1" id="choice1" onclick=revealAnswer1();>
-                    <pre class="language-java"><code class="language-java">char[] array = {'1', '2', '3', '4'}</code></pre>
-                    <i class="fa fa-check" aria-hidden="true"></i>
+                    <pre class="language-java"><code class="language-java">booksOnRow[1] = 17;</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
                 <div class="pair1" id="choice2" onclick=revealAnswer1();>
-                    <pre class="language-java"><code class="language-java">char[] array = {'1', '2', 3, '4'}</code></pre>
+                    <pre class="language-java"><code class="language-java">booksOnRow[2] = 17;</code></pre>
+                    <i class="fa fa-check" aria-hidden="true"></i>
+                </div>
+                <div class="pair1" id="choice3" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">booksOnRow[3] = 17;</code></pre>
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+                <div class="pair1" id="choice4" onclick=revealAnswer1();>
+                    <pre class="language-java"><code class="language-java">booksOnRow[4] = 17;</code></pre>
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
 			</div>
 			<hr>
 		</section>
-		<p>In the next section, we will go over how to actually use these values, and also how to modify and change them.</p>
 		<div class="nav">
-			<a href="arrayaccess.html" class="btn btn-green">Next: Array Access and Modification <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+			<a href="usingarrays.html" class="btn btn-green">Next: Using Arrays <i class="fa fa-angle-right" aria-hidden="true"></i></a>
 			<a class="btn btn-grey" href="arrays.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: Chapter 4 Introduction</a>
 		</div>
 	</main>
@@ -65,8 +89,12 @@ int booksOnRow5 = 15;</code></pre>
 		function revealAnswer1() {
             let el1 = document.querySelector(".pair1#choice1");
             let el2 = document.querySelector(".pair1#choice2");
-            el1.classList.add("right");
-            el2.classList.add("wrong");
+            let el3 = document.querySelector(".pair1#choice3");
+            let el4 = document.querySelector(".pair1#choice4");
+            el1.classList.add("wrong");
+            el2.classList.add("right");
+            el3.classList.add("wrong");
+            el4.classList.add("wrong");
         }
 	</script>
 </body>

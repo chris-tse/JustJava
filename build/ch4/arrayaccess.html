@@ -45,7 +45,7 @@ int booksOnRow5 = 15;</code></pre>
 			<div class="mc-pair">
 				<div class="pair1" id="choice1" onclick=revealAnswer1();>
                     <pre class="language-java"><code class="language-java">char[] array = {'1', '2', '3', '4'}</code></pre>
-                    <i class="fa fa-times" aria-hidden="true"></i>
+                    <i class="fa fa-check" aria-hidden="true"></i>
                 </div>
                 <div class="pair1" id="choice2" onclick=revealAnswer1();>
                     <pre class="language-java"><code class="language-java">char[] array = {'1', '2', 3, '4'}</code></pre>
@@ -65,8 +65,8 @@ int booksOnRow5 = 15;</code></pre>
 		function revealAnswer1() {
             let el1 = document.querySelector(".pair1#choice1");
             let el2 = document.querySelector(".pair1#choice2");
-            el1.classList.add("wrong");
-            el2.classList.add("right");
+            el1.classList.add("right");
+            el2.classList.add("wrong");
         }
 	</script>
 </body>

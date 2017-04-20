@@ -19,7 +19,7 @@
 
 		<p>Here is the general structure of defining a basic array:</p>
 
-		<pre class="language-java"><code class="language-java">type[] variableName = new type[length];</code></pre>
+		<pre class="language-java"><code class="language-java">type[] variableName = new type[length]; // length must be int > 0</code></pre>
 
 		<p>This will initialize an array with <code class="language-java">length</code> values all set to 0. Once the type of the array has been defined, that array can only hold values of the same type and the length cannot be changed.</p>
 
@@ -44,7 +44,15 @@ booksOnRow[2] = 20; // set third position to 20
 booksOnRow[3] = 18; // set fourth position to 18
 booksOnRow[4] = 15; // set fifth position to 15</code></pre>
 
-		<p>We use indices to set individual values of an array. Note that the count of the position starts at 0 and not 1. We access the values using square brackets and the index of the value, and we can then treat it like a regular <code class="language-java">int</code> variable.</p>
+		<p>We use indices to set individual values of an array. Note that the count of the position starts at 0 and not 1.</p>
+
+		<p>To get the values for calculations or to print them out, we access the values using square brackets and the index of the value, and we can then treat it like a regular <code class="language-java">int</code> variable.</p>
+
+		<pre class="language-java"><code class="language-java">System.out.println(booksOnRow[0]);
+System.out.println(booksOnRow[1]);
+System.out.println(booksOnRow[2]);
+System.out.println(booksOnRow[3]);
+System.out.println(booksOnRow[4]);</code></pre>
 
 		<p>While this seems like just as much work as before, all the values are contained neatly within one variable rather than being spread out across dozens of individual variables. An example would be to make several arrays and name them according to their book genre or topic.</p>
 

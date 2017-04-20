@@ -15,24 +15,42 @@
 	<main class="container group">
 		<h1 class="title">Using Arrays</h1>
 		<a href="../index.html" class="toc"><i class="fa fa-angle-left" aria-hidden="true"></i> Back to Table of Contents</a>
-		<p>Now that we know how to create arrays, we can retrieve the values in them for other tasks or modify them to update the data they store.</p>
+		<p>Now that we know how to create arrays, retrieve values, and change values, we can use loops to manipulate them more efficiently.</p>
 
-		<h3>Reading from Arrays</h3>
-		<p>To access the individual values of an array, we use the square bracket notation with the <em>index</em> of the array in this manner:</p>
-		<pre class="language-java"><code class="language-java">int[] arr = {1, 2, 3};
+		<h3>Setting Values</h3>
+		<p>To set or change the values in a loop, it is easier to set them using a loop if the values are calculated in a certain way. For example, if we wanted an array of 5 even numbers starting from 0:</p>
+		<pre class="language-java"><code class="language-java">int[] evens = new int[5];
 
-// Indices of arrays in Java start at 0
-System.out.println(arr[0]); // prints first position: 1
-System.out.println(arr[1]); // prints second position: 2
-System.out.println(arr[2]); // prints third position: 3</code></pre>
+// goes through each index, setting that value to be double its index
+// e.g. 0 -> 0
+//      1 -> 2
+//   	2 -> 4
+for (int i = 0; i < evens.length; i++) {
+	evens[i] = i * 2;
+}
 
-		<p>We need to remember that in Java, the program counts the positions starting from 0, not 1. Since we covered loops in the previous chapter, we can print all the values of an array much more easily:</p>
+// Result: evens = {0, 2, 4, 6, 8}</code></pre>
 
-		<pre class="language-java"><code class="language-java">for (int i = 0; i < arr.length; i++) { // the length of an array can be called with the .length property
-	System.out.println(arr[i]);
+		<p>By using <code class="language-java">evens.length</code> instead of just 5 in the condition, we can simply change the length in the first line and it will continue working without additional changes.</p>
+
+		<h3>Reading Values</h3>
+
+		<p>In the previous section, we printed out the array by called <code class="language-java">System.out.println()</code> on each element, but there are easier ways. One of them is by using a loop like above:</p>
+
+		<pre class="language-java"><code class="language-java">for (int i = 0; i < evens.length; i++) {
+	System.out.println(evens[i]);
+}
+</code></pre>
+
+		<p>There is also something called a <em>for each</em> loop, also known as <em>enhanced loops</em> which is more concise:</p>
+
+		<pre class="language-java"><code class="language-java">for (int num : evens) {
+	System.out.println(evens[i]);
 }</code></pre>
 
-		<p>Since the position starts from 0, the loop should start at 0 and go until 1 less than the length of the array (i.e. last position of array of length x is index x-1).</p>
+		<p>You will notice that it does not have the usual elements of a for loop. With this type of loop, it is the equivalent of saying "for each <code class="language-java">num</code> in the array <code class="language-java">evens</code> execute the following code block, hence the name <em>for each</em>.</p>
+
+		<h3>Performing Calculations</h3>
 
 		<p>Using this looping technique, we can perform tasks using the values inside the array. If we use the example from the previous section with the bookshelf, we could calculate the total number of books using the number of books on each row.</p>
 
@@ -45,15 +63,6 @@ for (int i = 0; i < arr.length; i++) {
 }
 
 System.out.println(totalBooks);</code></pre>
-
-		<h3>Changing Values in Arrays</h3>
-
-		<p>While this might work fine for a smaller program, what if we need to define a larger number of rows, or multiple bookshelves? We could modify the variable names with more numbers to keep track of which belongs where, but it gets messy very quickly.</p>
-
-		<p>What if we could store number of books on the bookshelf as a whole in one place? With arrays this is possible. Here's how you might define the same bookshelf from above with an array:</p>
-
-		<pre class="language-java"><code class="language-java">int[] booksOnRow = {16, 19, 20, 18, 15};</code></pre>
-
 		
 
 		<h2>Practice</h2>
@@ -74,8 +83,8 @@ System.out.println(totalBooks);</code></pre>
 		</section>
 		<p>In the next section, we will go over how to actually use these values, and also how to modify and change them.</p>
 		<div class="nav">
-			<a href="arrayaccess.html" class="btn btn-green">Next: Array Access and Modification <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-			<a class="btn btn-grey" href="arrays.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: Chapter 4 Introduction</a>
+			<a href="2darrays.html" class="btn btn-green">Next: 2-D Arrays <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+			<a class="btn btn-grey" href="arraybasics.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: Array Basics</a>
 		</div>
 	</main>
 

@@ -15,7 +15,7 @@
 	<main class="container group">
 		<h1 class="title">Using Arrays</h1>
 		<a href="../index.html" class="toc"><i class="fa fa-angle-left" aria-hidden="true"></i> Back to Table of Contents</a>
-		<p>Now that we know how to create arrays, retrieve values, and change values, we can use loops to manipulate them more efficiently.</p>
+		<p>Now that we know how to create arrays, retrieve values, and change values, we can use loops to manipulate them more easily.</p>
 
 		<h3>Setting Values</h3>
 		<p>To set or change the values in a loop, it is easier to set them using a loop if the values are calculated in a certain way. For example, if we wanted an array of 5 even numbers starting from 0:</p>
@@ -31,11 +31,11 @@ for (int i = 0; i < evens.length; i++) {
 
 // Result: evens = {0, 2, 4, 6, 8}</code></pre>
 
-		<p>By using <code class="language-java">evens.length</code> instead of just 5 in the condition, we can simply change the length in the first line and it will continue working without additional changes.</p>
+		<p>By using <code class="language-java">evens.length</code> instead of just 5 in the condition, we can simply change the size of the array in the first line and it will continue working without additional changes.</p>
 
 		<h3>Reading Values</h3>
 
-		<p>In the previous section, we printed out the array by called <code class="language-java">System.out.println()</code> on each element, but there are easier ways. One of them is by using a loop like above:</p>
+		<p>In the previous section, we printed out the array by calling <code class="language-java">System.out.println()</code> on each element, but there are easier ways. One of them is by using a loop like above:</p>
 
 		<pre class="language-java"><code class="language-java">for (int i = 0; i < evens.length; i++) {
 	System.out.println(evens[i]);
@@ -68,17 +68,26 @@ System.out.println(totalBooks);</code></pre>
 		<h2>Practice</h2>
 
 		<section class="problems">
-			<p>Which of the following declares a valid array? Click on the correct answer.</p>
-			<div class="mc-pair">
-				<div class="pair1" id="choice1" onclick=revealAnswer1();>
-                    <pre class="language-java"><code class="language-java">char[] array = {'1', '2', '3', '4'}</code></pre>
-                    <i class="fa fa-check" aria-hidden="true"></i>
-                </div>
-                <div class="pair1" id="choice2" onclick=revealAnswer1();>
-                    <pre class="language-java"><code class="language-java">char[] array = {'1', '2', 3, '4'}</code></pre>
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </div>
+			<p>Given the following code, what will the output be? Please enter the correct answer.</p>
+			<pre class="language-java"><code class="language-java">int[] grades = {97, 75, 100, 84, 85};
+
+double average = 0;
+int total = 0;
+
+for (int i = 0; i < grades.length; i++) {
+	total += grades[i];
+}
+
+average = total / grades.length;
+
+System.out.println(average);
+			</code></pre>
+			<div class="ans-group">
+				<input type="text" id="answer" class="ans-input input-control" onkeydown = "if (event.keyCode == 13) checkAns()">
+				<input type=button class="ans-btn input-control" onclick="checkAns()" id="checkbtn" value="Check"/>
 			</div>
+			<p class="hidden error err-bg">Please input an answer</p>
+			<p class="anskey hidden">Answer: <i class="fa"></i><br><span class="mono">88.0</span><br><em>Remeber that</em> <code class="language-java">average</code> <em>is a double</em></p>
 			<hr>
 		</section>
 		<p>In the next section, we will go over how to actually use these values, and also how to modify and change them.</p>
@@ -89,11 +98,46 @@ System.out.println(totalBooks);</code></pre>
 	</main>
 
 	<script>
-		function revealAnswer1() {
-            let el1 = document.querySelector(".pair1#choice1");
-            let el2 = document.querySelector(".pair1#choice2");
-            el1.classList.add("right");
-            el2.classList.add("wrong");
+		let answer = "88.0"
+		let inp = document.querySelector(".ans-group");
+		let ans = document.querySelector(".anskey");
+		let err = document.querySelector(".error");
+		let icon = document.querySelector(".anskey .fa");
+		
+		function checkAns() {
+
+			let correct = check(document.getElementById("answer").value.trim(), answer)
+			
+            if(document.getElementById("answer").value === "") {
+            	err.classList.remove("hidden")
+            	inp.classList.add("err-bg")
+            	ans.classList.add("hidden")
+            } else if ( correct ) {
+            	err.classList.add("hidden")
+            	ans.classList.remove("hidden")
+            	ans.classList.add("right-bg")
+            	inp.classList.add("right-bg")
+            	inp.classList.remove("err-bg")
+            	icon.classList.add("fa-check")
+            	icon.classList.remove("fa-times")
+            } else {
+            	err.classList.add("hidden")
+            	ans.classList.remove("hidden")
+            	ans.classList.remove("right-bg")
+            	ans.classList.add("err-bg")
+            	inp.classList.remove("right-bg")
+            	icon.classList.add("fa-times")
+            	icon.classList.remove("fa-check")
+            	inp.classList.add("err-bg")
+            }
+        }
+
+        function check(inp, ans) {
+        	if (inp === ans) {
+        		return true
+        	} else {
+        		return false
+        	}
         }
 	</script>
 </body>

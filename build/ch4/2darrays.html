@@ -42,38 +42,7 @@
 
 		<p>In the example above, to print the values of the array we use something called a nested loop, which means that there is one loop running within another.</p>
 
-		<h3>Reading Values</h3>
-
-		<p>In the previous section, we printed out the array by calling <code class="language-java">System.out.println()</code> on each element, but there are easier ways. One of them is by using a loop like above:</p>
-
-		<pre class="language-java"><code class="language-java">for (int i = 0; i < evens.length; i++) {
-	System.out.println(evens[i]);
-}
-</code></pre>
-
-		<p>There is also something called a <em>for each</em> loop, also known as <em>enhanced loops</em> which is more concise:</p>
-
-		<pre class="language-java"><code class="language-java">for (int num : evens) {
-	System.out.println(evens[i]);
-}</code></pre>
-
-		<p>You will notice that it does not have the usual elements of a for loop. With this type of loop, it is the equivalent of saying "for each <code class="language-java">num</code> in the array <code class="language-java">evens</code> execute the following code block, hence the name <em>for each</em>.</p>
-
-		<h3>Performing Calculations</h3>
-
-		<p>Using this looping technique, we can perform tasks using the values inside the array. If we use the example from the previous section with the bookshelf, we could calculate the total number of books using the number of books on each row.</p>
-
-		<pre class="language-java"><code class="language-java">int[] booksOnRow = {16, 19, 20, 18, 15};
-
-int totalBooks = 0; // initialize variable to hold number while summing
-for (int i = 0; i < arr.length; i++) {
-	totalBooks += booksOnRow[i]; // add the number of books 
-	                             // of each row to the running sum
-}
-
-System.out.println(totalBooks);</code></pre>
 		
-
 		<h2>Practice</h2>
 
 		<section class="problems">

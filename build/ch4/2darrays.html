@@ -52,7 +52,7 @@
 
 		<p>Generally, a 2-D array consists of an array which holds several other arrays in order to create a rectangular grid shape. This is helpful for keeping track of data that is arranged in a grid-like form, like a game of tic-tac-toe for example.</p>
 
-		<p>Let's say we wanted to represent the state of this game of tic-tac-toe in a program:</p>
+		<p>Let's say we wanted to represent the state of this game of tic-tac-toe in a program using integers:</p>
 
 		<img src="../img/tictactoe.png" alt="tictactoe game">
 
@@ -60,9 +60,9 @@
 
 		<p>The output we'll obtain from this would be:</p>
 
-		<pre class="language-java"><code class="language-java">2 0 1
-1 1 2
-2 0 0</code></pre>
+		<pre class="language-java"><code class="language-java">O   X
+X X O
+O    </code></pre>
 
 		<p>As can be seen in the example above, a 2-D array is nothing more than an array of arrays. However, this does make it a little more complex when we want to go through the 2-D array using loops since we now have to go through two different values: the index of the main array, and the index of each of the inner arrays.</p>
 		

@@ -102,7 +102,7 @@ for (int i = 0; i < cond1; i++) {
 			</div>
 			
 			<p class="hidden error err-bg">Please input an answer in both fields</p>
-			<p class="anskey hidden">Answer: <i class="fa"></i><br><span class="mono">88.0</span><br><em>Remeber that</em> <code class="language-java">average</code> <em>is a double</em></p>
+			<p class="anskey hidden">Answer: <i class="fa"></i><br><span class="mono">cond1 = 3<br>cond2 = 5</span><br><em>You can think of cond1 as selecting the row, and cond2 as selecting the column.</em></p>
 			<hr>
 		</section>
 		<p>In the next section, we will go over how to actually use these values, and also how to modify and change them.</p>
@@ -123,19 +123,22 @@ for (int i = 0; i < cond1; i++) {
 		
 		function checkAns() {
 
-			let correct = check(document.getElementById("answer").value.trim(), answer)
+			let correct1 = check(document.getElementById("answer1").value.trim(), answer1)
+			let correct2 = check(document.getElementById("answer2").value.trim(), answer2)
 			
             if(document.getElementById("answer1").value === "" || document.getElementById("answer2").value === "") {
             	err.classList.remove("hidden")
             	inp1.classList.add("err-bg")
             	inp2.classList.add("err-bg")
             	ans.classList.add("hidden")
-            } else if ( correct ) {
+            } else if ( correct1 && correct2) {
             	err.classList.add("hidden")
             	ans.classList.remove("hidden")
             	ans.classList.add("right-bg")
-            	inp.classList.add("right-bg")
-            	inp.classList.remove("err-bg")
+            	inp1.classList.add("right-bg")
+            	inp2.classList.add("right-bg")
+            	inp1.classList.remove("err-bg")
+            	inp2.classList.remove("err-bg")
             	icon.classList.add("fa-check")
             	icon.classList.remove("fa-times")
             } else {
@@ -143,10 +146,12 @@ for (int i = 0; i < cond1; i++) {
             	ans.classList.remove("hidden")
             	ans.classList.remove("right-bg")
             	ans.classList.add("err-bg")
-            	inp.classList.remove("right-bg")
+            	inp1.classList.remove("right-bg")
+            	inp2.classList.remove("right-bg")
             	icon.classList.add("fa-times")
             	icon.classList.remove("fa-check")
-            	inp.classList.add("err-bg")
+            	inp1.classList.add("err-bg")
+            	inp2.classList.add("err-bg")
             }
         }
 

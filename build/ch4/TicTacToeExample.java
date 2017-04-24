@@ -1,9 +1,9 @@
 public class TicTacToeExample {
 	public static void main(String[] args) {
 		// Assign a value to the possible states of a square
-		char BLANK = " ";
-		char X     = "X";
-		char O     = "O";
+		char BLANK = ' ';
+		char X     = 'X';
+		char O     = 'O';
 
 		// Declare 2-D Array
 		char[][] board = {{O, BLANK,   X  },

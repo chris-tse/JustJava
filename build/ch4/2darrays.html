@@ -15,6 +15,33 @@
     		width: 100%;
     		max-width: 300px;
     	}
+
+    	.problems .ans-group1 .ans-input,
+    	.problems .ans-group2 .ans-input {
+			width: 55%;
+			border-right: 1px solid #ccc;
+			border-radius: 4px;
+    	}
+
+    	.problems .ans-group2 .ans-btn {
+			width: 30%;
+			max-width: 100px;
+			font-size: 0.9rem;
+			line-height: 1;
+			cursor: pointer;
+			height: 40px;
+			padding: 10px 15px;
+			margin-left: -1px;
+			background-color: #2e9c33;
+			color: white;
+			border: none;
+			border-radius: 4px;
+			margin-left: 95px;
+		}
+
+		.ans-btn:hover {
+			background: #227526;
+		}
     </style>
 </head>
 <body>
@@ -42,29 +69,39 @@
 
 		<p>In the example above, to print the values of the array we use something called a nested loop, which means that there is one loop running within another.</p>
 
-		
+		<p>Nested loops can be hard to understand at first. Let's go through the one in the example. Because of the way loops work, the loop in the inside should run completely and exit for each iteration of the outer loop. Let's take a closer look at the indices of the outer and inner loops, <code class="language-java">i</code> and <code class="language-java">j</code>. <code class="language-java">i</code> keeps track of which of the inner arrays to access, while <code class="language-java">j</code> access the individual values of the inner array that is selected by <code class="language-java">i</code></p>
+
+		<ul>
+			<li>The outer loop starts with i = 0, then the inner loop starts with j = 0</li>
+			<li>The inner loop starts to run, looping through the pairs <code class="language-java">[0][0]</code>, <code class="language-java">[0][1]</code>, <code class="language-java">[0][2]</code></li>
+			<li>That finishes and exits the inner loop, incrementing the outer loop so that i = 1</li>
+			<li>The following iterations will loop through <code class="language-java">[1][0]</code>, <code class="language-java">[1][1]</code>, <code class="language-java">[1][2]</code></li>
+			<li>Repeat until the outer loop has terminated</li>
+		</ul>
 		<h2>Practice</h2>
 
 		<section class="problems">
 			<p>Given the following code, what will the output be? Please enter the correct answer.</p>
-			<pre class="language-java"><code class="language-java">int[] grades = {97, 75, 100, 84, 85};
+			<pre class="language-java"><code class="language-java">int[][] myArr = {{1, 2, 3, 4, 5},
+				 {2, 4, 6, 8, 10},
+				 {3, 6, 9, 12, 15}};
 
-double average = 0;
-int total = 0;
-
-for (int i = 0; i < grades.length; i++) {
-	total += grades[i];
+for (int i = 0; i < cond1; i++) {
+	for (int j = 0; j < cond2; j++) {
+		System.out.println(myArr[i][j]);
+	}
 }
-
-average = total / grades.length;
-
-System.out.println(average);
 			</code></pre>
-			<div class="ans-group">
-				<input type="text" id="answer" class="ans-input input-control" onkeydown = "if (event.keyCode == 13) checkAns()">
+
+			<div class="ans-group1">
+				<span class="input-control input-pre" style="padding-right: 10px">cond1 = </span><input type="text" id="answer1" class="ans-input input-control" onkeydown = "if (event.keyCode == 13) checkAns()">
+			</div>
+			<div class="ans-group2">
+				<span class="input-control input-pre" style="padding-right: 10px">cond2 = </span><input type="text" id="answer2" class="ans-input input-control" onkeydown = "if (event.keyCode == 13) checkAns()"><br><br>
 				<input type=button class="ans-btn input-control" onclick="checkAns()" id="checkbtn" value="Check"/>
 			</div>
-			<p class="hidden error err-bg">Please input an answer</p>
+			
+			<p class="hidden error err-bg">Please input an answer in both fields</p>
 			<p class="anskey hidden">Answer: <i class="fa"></i><br><span class="mono">88.0</span><br><em>Remeber that</em> <code class="language-java">average</code> <em>is a double</em></p>
 			<hr>
 		</section>
@@ -76,8 +113,10 @@ System.out.println(average);
 	</main>
 
 	<script>
-		let answer = "88.0"
-		let inp = document.querySelector(".ans-group");
+		let answer1 = "3";
+		let answer2 = "5";
+		let inp1 = document.querySelector(".ans-group1");
+		let inp2 = document.querySelector(".ans-group2");
 		let ans = document.querySelector(".anskey");
 		let err = document.querySelector(".error");
 		let icon = document.querySelector(".anskey .fa");
@@ -86,9 +125,10 @@ System.out.println(average);
 
 			let correct = check(document.getElementById("answer").value.trim(), answer)
 			
-            if(document.getElementById("answer").value === "") {
+            if(document.getElementById("answer1").value === "" || document.getElementById("answer2").value === "") {
             	err.classList.remove("hidden")
-            	inp.classList.add("err-bg")
+            	inp1.classList.add("err-bg")
+            	inp2.classList.add("err-bg")
             	ans.classList.add("hidden")
             } else if ( correct ) {
             	err.classList.add("hidden")

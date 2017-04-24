@@ -1,14 +1,14 @@
 public class TicTacToeExample {
 	public static void main(String[] args) {
 		// Assign a value to the possible states of a square
-		String BLANK = " ";
-		String X     = "X";
-		String O     = "O";
+		char BLANK = " ";
+		char X     = "X";
+		char O     = "O";
 
 		// Declare 2-D Array
-		String[][] board = {{O, BLANK,   X  },
-						    {X,   X  ,   O  },
-						    {O, BLANK, BLANK}};
+		char[][] board = {{O, BLANK,   X  },
+						  {X,   X  ,   O  },
+						  {O, BLANK, BLANK}};
 
 		// Print out each element in the array
 		for (int i = 0; i < 3; i++) {

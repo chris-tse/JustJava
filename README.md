@@ -7,9 +7,8 @@ by Christopher T, Tianyi C., Qiang P., Zhendong S.
 Build of current work can be viewed [here](https://christopher-tse.github.io/CS3053GroupProject/build/)
 - Chapter 1 content (complete)
 - Chapter 2 content (complete)
-- Chapter 3 content (not started)
-- Chapter 4 content (not started)
-- Chapter 5 content (not started)
+- Chapter 3 content (complete)
+- Chapter 4 content (in progress)
 
 
 ## Usage

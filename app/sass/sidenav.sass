@@ -1,0 +1,132 @@
+$sidebarcolor: #333
+$subbarcolor: #444
+$transwhite: rgba(255, 255, 255, 0.8)
+
+@mixin sidebartrans() 
+	transition: all 0.5s
+
+@mixin fixed($t, $r, $b, $l)
+	position: fixed
+	top: $t
+	bottom: $b
+	left: $l
+	right: $r
+
+
+.page-content
+	position: relative
+	+sidebartrans()
+	z-index: 0
+	margin: 0 auto
+	padding: 0 100px 0 100px
+
+.toggle
+	+fixed(20px, initial, initial, 20px)
+	+sidebartrans()
+	z-index: 1
+	text-decoration: none
+	font-size: 2.5rem
+	color: #000
+	cursor: pointer
+
+.sidebar
+	+fixed(0, 0, 0, -350px)
+	+sidebartrans()
+	width: 350px
+	padding-top: 30px
+	padding-bottom: 30px
+	z-index: 0
+	background: $sidebarcolor
+	
+	#lessonlabel
+		display: list-item
+		padding: 15px 30px 15px 30px
+		cursor: pointer
+		color: $transwhite
+
+		i
+			padding-left: 10px
+
+		&:hover
+			color: white
+			background: darken($sidebarcolor, 3%)
+
+	ul
+		padding-left: 0
+		list-style: none
+
+		li
+			color: $transwhite
+			background: $sidebarcolor
+			font-size: 1rem
+			padding: 15px 30px 15px 30px
+			-webkit-font-smoothing: antialiased
+			cursor: pointer
+
+			label
+				cursor: inherit
+
+			&:hover
+				color: white
+				background: darken($sidebarcolor, 3%)
+
+#sidebartoggler
+	display: none
+
+	&:checked + .page-wrap
+
+		.sidebar
+			left: 0px
+
+		.toggle
+			left: 370px
+
+		.page-content
+			padding-left: 450px
+
+.subwrapper
+	width: 100%
+
+	ul
+		list-style: none
+		margin: 0
+		padding: 0
+
+	#lessonlist
+		background: $subbarcolor
+
+		li
+			padding: 15px 0px 15px 40px
+			background: $subbarcolor
+
+			&:hover
+				background: darken($subbarcolor, 3%)
+
+		a
+			text-decoration: none
+			color: $transwhite
+
+			&:hover
+				color: white
+
+	#lessons
+		display: none
+
+		&:checked ~ ul
+				height: 100%
+				transform-origin: top
+				transition: transform .2s ease-out
+				transform: scaleY(1)
+				display: block
+
+	input[type="checkbox"] ~ ul
+		height: 0
+		scaleY(0)
+		display: none
+
+
+
+
+
+
+

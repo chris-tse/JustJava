@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Learn Java - 4.4 Sorting Arrays</title>
+	<link rel="stylesheet" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/general.css">
+	<link rel="stylesheet" href="../css/prism.css">
+	<script src="../js/prism.js"></script>
+    <script src="https://use.fontawesome.com/529e3dbb41.js"></script>
+</head>
+<body>
+	<main class="container group">
+		<h1 class="title">Sorting Arrays</h1>
+		<a href="../index.html" class="toc"><i class="fa fa-angle-left" aria-hidden="true"></i> Back to Table of Contents</a>
+		<p>While we can use arrays to store different values, we sometimes need to sort them since they may not always be provided in the order we need them. For example, we may need to sort a list of names alphabetically, or sort prices of items from lowest to highest.</p>
+
+		<p>Methods used to sort arrays are called sorting algorithms. An algorithm is simply a process used to solve a problem, meaning that sorting algorithms are just different processes we can follow in order to end up with a sorted array. These usually involve moving the elements of a value around according to a set of rules which will end up with the values in sorted order.</p>
+
+		<p>Algorithms are a topic which require in-depth study, but we will introduce two of the simpler ways to sort an array of numbers.</p>
+
+		<h3>Bubble Sort</h3>
+
+		<p>The bubble sort algorithm is one of the easier sorts to implement. As implied by the name, the bubble sort algorithm "bubbles" or raises the values to their proper location in the array.</p>
+
+		<img src="../img/tictactoe.png" alt="tictactoe game">
+
+		<pre data-src="TicTacToeExample.java"></pre>
+
+		<p>The output we'll obtain from this would be:</p>
+
+		<pre class="language-java"><code class="language-java">O   X
+X X O
+O    </code></pre>
+
+		<p>As can be seen in the example above, a 2-D array is nothing more than an array of arrays. However, this does make it a little more complex when we want to go through the 2-D array using loops since we now have to go through two different values: the index of the main array, and the index of each of the inner arrays.</p>
+		
+
+		<p>In the example above, to print the values of the array we use something called a nested loop, which means that there is one loop running within another.</p>
+
+		<p>Nested loops can be hard to understand at first. Let's go through the one in the example. Because of the way loops work, the loop in the inside should run completely and exit for each iteration of the outer loop. Let's take a closer look at the indices of the outer and inner loops, <code class="language-java">i</code> and <code class="language-java">j</code>. <code class="language-java">i</code> keeps track of which of the inner arrays to access, while <code class="language-java">j</code> access the individual values of the inner array that is selected by <code class="language-java">i</code></p>
+
+		<ul>
+			<li>The outer loop starts with i = 0, then the inner loop starts with j = 0</li>
+			<li>The inner loop starts to run, looping through the pairs <code class="language-java">[0][0]</code>, <code class="language-java">[0][1]</code>, <code class="language-java">[0][2]</code></li>
+			<li>That finishes and exits the inner loop, incrementing the outer loop so that i = 1</li>
+			<li>The following iterations will loop through <code class="language-java">[1][0]</code>, <code class="language-java">[1][1]</code>, <code class="language-java">[1][2]</code></li>
+			<li>Repeat until the outer loop has terminated</li>
+		</ul>
+		<h2>Practice</h2>
+
+		<section class="problems">
+			<p>Given the following code, what will the output be? Please enter the correct answer.</p>
+			<pre class="language-java"><code class="language-java">int[][] myArr = {{1, 2, 3, 4, 5},
+				 {2, 4, 6, 8, 10},
+				 {3, 6, 9, 12, 15}};
+
+for (int i = 0; i < cond1; i++) {
+	for (int j = 0; j < cond2; j++) {
+		System.out.println( myArr[i][j] );
+	}
+}
+			</code></pre>
+
+			<div class="ans-group1">
+				<span class="input-control input-pre" style="padding-right: 10px">cond1 = </span><input type="text" id="answer1" class="ans-input input-control" onkeydown = "if (event.keyCode == 13) checkAns()">
+			</div>
+			<div class="ans-group2">
+				<span class="input-control input-pre" style="padding-right: 10px">cond2 = </span><input type="text" id="answer2" class="ans-input input-control" onkeydown = "if (event.keyCode == 13) checkAns()"><br><br>
+				<input type=button class="ans-btn input-control" onclick="checkAns()" id="checkbtn" value="Check"/>
+			</div>
+			
+			<p class="hidden error err-bg">Please input an answer in both fields</p>
+			<p class="anskey hidden">Answer: <i class="fa"></i><br><span class="mono">cond1 = 3<br>cond2 = 5</span><br><em>You can think of cond1 as selecting the row, and cond2 as selecting the column.</em></p>
+			<hr>
+		</section>
+		<p>In the next section, we will go over how to actually use these values, and also how to modify and change them.</p>
+		<div class="nav">
+			<a href="../theend.html" class="btn btn-green">Next: The End <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+			<a class="btn btn-grey" href="arraybasics.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: Usings Arrays</a>
+		</div>
+	</main>
+
+	<script>
+		let answer1 = "3";
+		let answer2 = "5";
+		let inp1 = document.querySelector(".ans-group1");
+		let inp2 = document.querySelector(".ans-group2");
+		let ans = document.querySelector(".anskey");
+		let err = document.querySelector(".error");
+		let icon = document.querySelector(".anskey .fa");
+		
+		function checkAns() {
+
+			let correct1 = check(document.getElementById("answer1").value.trim(), answer1)
+			let correct2 = check(document.getElementById("answer2").value.trim(), answer2)
+			
+            if(document.getElementById("answer1").value === "" || document.getElementById("answer2").value === "") {
+            	err.classList.remove("hidden")
+            	inp1.classList.add("err-bg")
+            	inp2.classList.add("err-bg")
+            	ans.classList.add("hidden")
+            } else if ( correct1 && correct2) {
+            	err.classList.add("hidden")
+            	ans.classList.remove("hidden")
+            	ans.classList.add("right-bg")
+            	inp1.classList.add("right-bg")
+            	inp2.classList.add("right-bg")
+            	inp1.classList.remove("err-bg")
+            	inp2.classList.remove("err-bg")
+            	icon.classList.add("fa-check")
+            	icon.classList.remove("fa-times")
+            } else {
+            	err.classList.add("hidden")
+            	ans.classList.remove("hidden")
+            	ans.classList.remove("right-bg")
+            	ans.classList.add("err-bg")
+            	inp1.classList.remove("right-bg")
+            	inp2.classList.remove("right-bg")
+            	icon.classList.add("fa-times")
+            	icon.classList.remove("fa-check")
+            	inp1.classList.add("err-bg")
+            	inp2.classList.add("err-bg")
+            }
+        }
+
+        function check(inp, ans) {
+        	if (inp === ans) {
+        		return true
+        	} else {
+        		return false
+        	}
+        }
+	</script>
+</body>
+</html>

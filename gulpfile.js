@@ -1,7 +1,8 @@
 /////////////////////////////
 // Required
 /////////////////////////////
-var gulp = require('gulp'),
+const gulp = require('gulp'),
+    babel = require('gulp-babel'),
     sass = require('gulp-sass'),
     browserSync = require('browser-sync'),
     reload = browserSync.reload,
@@ -13,8 +14,7 @@ var gulp = require('gulp'),
     dedupe = require('gulp-dedupe'),
     clean = require('gulp-clean-css'),
     concat = require('gulp-concat'),
-    del = require('del'),
-    bower = require('gulp-bower')
+    del = require('del')
 
 /////////////////////////////
 // Scripts Task
@@ -24,6 +24,9 @@ gulp.task('scripts', function() {
         .pipe(concat('all.js'))
         .pipe(gulp.dest('app/js'))
         .pipe(rename({suffix:'.min'}))
+        .pipe(babel({
+            presets: ['es2015']
+        }))
         .pipe(uglify().on('error', function(e) {gutil.log(gutil.colors.red('[Error]'), e.toString()); this.emit('end');}))
         .pipe(gulp.dest('app/js'))
         .pipe(reload({stream:true}));
@@ -33,9 +36,20 @@ gulp.task('scripts', function() {
 // Sass Task
 /////////////////////////////
 gulp.task('sass', function() {
+    // homepage
+    gulp.src('app/sass/sidenav.sass')
+    .pipe(plumber())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(prefix({
+        browsers: ['> 5%'],
+        cascade: false
+    }))
+    .pipe(clean())
+    .pipe(gulp.dest('app/css'))
+    .pipe(reload({stream:true}));
+
     // main menu
     gulp.src('app/sass/mainmenu.sass')
-    .pipe(concat('mainmenu.sass'))
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
     .pipe(prefix({
@@ -48,7 +62,6 @@ gulp.task('sass', function() {
 
     // general
     gulp.src('app/sass/general.sass')
-    .pipe(concat('general.sass'))
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
     .pipe(prefix({

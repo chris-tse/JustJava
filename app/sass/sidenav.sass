@@ -18,7 +18,7 @@ $transwhite: rgba(255, 255, 255, 0.8)
 	+sidebartrans()
 	z-index: 0
 	margin: 0 auto
-	padding: 0 100px 0 100px
+	padding: 0 300px 0 300px
 
 .toggle
 	+fixed(20px, initial, initial, 20px)
@@ -55,16 +55,22 @@ $transwhite: rgba(255, 255, 255, 0.8)
 		padding-left: 0
 		list-style: none
 
-		li
+		a
 			color: $transwhite
 			background: $sidebarcolor
 			font-size: 1rem
 			padding: 15px 30px 15px 30px
 			-webkit-font-smoothing: antialiased
 			cursor: pointer
+			display: list-item
+			text-decoration: none
 
-			label
-				cursor: inherit
+			&:hover
+				color: white
+				background: darken($sidebarcolor, 3%)
+
+		label
+			cursor: inherit
 
 			&:hover
 				color: white
@@ -94,19 +100,17 @@ $transwhite: rgba(255, 255, 255, 0.8)
 
 	#lessonlist
 		background: $subbarcolor
+				
 
-		li
-			padding: 15px 0px 15px 40px
+		a
+			padding: 15px 0px 15px 50px
 			background: $subbarcolor
+			text-decoration: none
+			color: $transwhite
+			display: list-item
 
 			&:hover
 				background: darken($subbarcolor, 3%)
-
-		a
-			text-decoration: none
-			color: $transwhite
-
-			&:hover
 				color: white
 
 	#lessons

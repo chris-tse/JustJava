@@ -1,6 +1,9 @@
 $sidebarcolor: #333
 $subbarcolor: #444
 $transwhite: rgba(255, 255, 255, 0.8)
+$small: 750px
+$medium: 950px
+$large: 1200px
 
 @mixin sidebartrans() 
 	transition: all 0.5s
@@ -18,10 +21,9 @@ $transwhite: rgba(255, 255, 255, 0.8)
 	+sidebartrans()
 	z-index: 0
 	margin: 0 auto
-	padding: 0 300px 0 300px
 
 .toggle
-	+fixed(20px, initial, initial, 20px)
+	+fixed(10px, initial, initial, 20px)
 	+sidebartrans()
 	z-index: 1
 	text-decoration: none
@@ -53,6 +55,7 @@ $transwhite: rgba(255, 255, 255, 0.8)
 
 	ul
 		padding-left: 0
+		margin-top: 50px
 		list-style: none
 
 		a
@@ -71,6 +74,7 @@ $transwhite: rgba(255, 255, 255, 0.8)
 
 		label
 			cursor: inherit
+			font-weight: lighter
 
 			&:hover
 				color: white
@@ -89,7 +93,7 @@ $transwhite: rgba(255, 255, 255, 0.8)
 			color: white
 
 		.page-content
-			padding-left: 450px
+			padding-left: 320px
 
 // Start of collapsible menu
 // Inspired by http://codepen.io/huange/pen/pJqEMj
@@ -132,7 +136,30 @@ $transwhite: rgba(255, 255, 255, 0.8)
 		display: none
 
 
+@media(max-width: $small - 1)
+	.page-wrap
+		padding: 80px 10px 0px 20px
 
+	.toggle
+		display: block
+		font-size: 1.8rem
+
+	.sidebar
+		ul
+			a, label
+				font-size: 0.8rem
+	
+@media(min-width: $small)
+	.page-wrap
+		padding: 15px 100px 0px 100px
+
+@media(min-width: $medium)
+	p
+		color: black
+
+@media(min-width: $large)
+	p
+		color: black
 
 
 

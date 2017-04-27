@@ -1,0 +1,67 @@
+$small: 750px
+$medium: 950px
+$large: 1200px
+
+.page-content
+	.hero
+		background: url('../img/darkblurlady.jpg') no-repeat center fixed
+		background-size: cover
+
+		.hero-title
+			color: white
+			margin-top: 0
+			text-align: center
+			.thick
+				font-weight: bold
+			.thin
+				font-weight: 300
+
+		.herobtn
+			text-decoration: none
+		.herowhite
+			background: white
+			color: #333
+			&:hover
+				background: #ddd
+		.herotrans
+			color: white
+			border: 1px solid white
+			&:hover
+				color: #ddd
+				border-color: #ddd
+
+
+
+@media(max-width: $small - 1)
+	.hero
+		width: 100%
+		height: 80vh
+		padding-top: 80px
+
+		.hero-title
+			font-size: 2.5rem
+
+		.hero-btngroup
+			padding-top: 30px
+
+			.herobtn
+				display: block
+				text-align: center
+				max-width: 300px
+				margin: 0 auto 20px
+				padding: 15px 20px
+	
+@media(min-width: $small)
+	.page-wrap
+		padding: 15px 100px 0px 100px
+
+		.hero
+			height: 80vh
+
+@media(min-width: $medium)
+	p
+		color: black
+
+@media(min-width: $large)
+	p
+		color: black

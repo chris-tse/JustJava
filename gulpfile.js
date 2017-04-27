@@ -36,8 +36,20 @@ gulp.task('scripts', function() {
 // Sass Task
 /////////////////////////////
 gulp.task('sass', function() {
-    // homepage
+    // sidenav
     gulp.src('app/sass/sidenav.sass')
+    .pipe(plumber())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(prefix({
+        browsers: ['> 5%'],
+        cascade: false
+    }))
+    .pipe(clean())
+    .pipe(gulp.dest('app/css'))
+    .pipe(reload({stream:true}));
+
+    // homepage
+    gulp.src('app/sass/homepage.sass')
     .pipe(plumber())
     .pipe(sass().on('error', sass.logError))
     .pipe(prefix({

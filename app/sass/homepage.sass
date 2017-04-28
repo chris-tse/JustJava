@@ -9,11 +9,13 @@
 	.hero
 		background: url('../img/darkblurlady.jpg') no-repeat center fixed
 		background-size: cover
+		min-height: 460px
 
-		.hero-title
+		.hero-title, .hero-sub
 			font-family: "Roboto", sans-serif
 			color: white
 			text-align: center
+			font-weight: lighter
 			
 
 		.herobtn
@@ -33,18 +35,42 @@
 				color: #ddd
 				border-color: #ddd
 
+@media(max-width: $tiny)
+	.hero
+		padding-top: 80px
+		height: 90vh
+
+		.hero-title
+			font-size: 1.5rem
+		
+		.hero-sub
+			font-size: 1rem
+
+		.hero-btngroup
+			padding-top: 30px
+
+			.herobtn
+				display: block
+				text-align: center
+				max-width: 300px
+				margin: 0 auto 20px
+				padding: 10px 15px
 
 
-@media(max-width: $small - 1)
+@media(min-width: $tiny + 1)
 	.page-wrap
 		padding-top: 59px
 	.hero
 		width: 100%
 		height: 80vh
-		padding-top: 80px
+		padding-top: 10px
 
 		.hero-title
 			font-size: 2.5rem
+		
+		.hero-sub
+			font-weight: 300
+			font-size: 1.5rem
 
 		.hero-btngroup
 			padding-top: 30px
@@ -65,8 +91,10 @@
 		padding-top: 150px
 
 		.hero-title
-			margin-bottom: 100px
 			font-size: 3rem
+
+		.hero-sub
+			font-size: 2rem
 
 		.hero-btngroup
 			text-align: center

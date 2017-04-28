@@ -173,9 +173,16 @@
 		padding-left: 10px
 		padding-right: 10px
 		background: $transwhite
+
+	#sidebartoggler
+		&:checked + .page-wrap
+			.toggle
+				left: 330px
+
 	.sidebar
 		width: 400px
 		padding-top: 15px
+		+fixed(0, 0, 0, -450px)
 		ul
 			.side-title
 				font-size: 2.5rem

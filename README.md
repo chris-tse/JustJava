@@ -19,7 +19,7 @@ Build of current work can be viewed [here](https://christopher-tse.github.io/CS3
 
 3. Run `gulp` while in the root folder of the project to run locally
 
-4. Run `gulp build` to generate build folder. NOTE: relative bower paths need to be manually changed to the standalone files 
+4. Run `gulp build` to generate build folder. 
 
 Developed using:
 - Node 7.7.3

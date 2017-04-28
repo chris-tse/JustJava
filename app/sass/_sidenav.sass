@@ -1,9 +1,4 @@
-$sidebarcolor: #333
-$subbarcolor: #444
-$transwhite: rgba(255, 255, 255, 0.8)
-$small: 750px
-$medium: 950px
-$large: 1200px
+@import 'vars'
 
 @mixin sidebartrans() 
 	transition: all 0.5s
@@ -35,11 +30,18 @@ $large: 1200px
 .sidebar
 	+fixed(0, 0, 0, -350px)
 	+sidebartrans()
-	width: 350px
-	padding-top: 30px
-	padding-bottom: 30px
+	width: 300px
 	z-index: 0
 	background: $sidebarcolor
+
+	.side-title
+		color: white
+		font-family: "Roboto", sans-serif
+
+		.thick
+			font-weight: bold
+		.thin
+			font-weight: thin
 	
 	#lessonlabel
 		display: list-item
@@ -56,8 +58,8 @@ $large: 1200px
 
 	ul
 		padding-left: 0
-		margin-top: 50px
 		list-style: none
+		-webkit-margin-before: 0
 
 		a
 			color: $transwhite
@@ -90,12 +92,13 @@ $large: 1200px
 			left: 0px
 
 		.toggle
-			left: 280px
+			left: 230px
 			color: white
 			background: transparent
 
 		.page-content
-			padding-left: 320px
+			position: fixed
+			width: 100%
 
 
 // Start of collapsible menu
@@ -140,8 +143,6 @@ $large: 1200px
 
 
 @media(max-width: $small - 1)
-	.page-wrap
-		padding-top: 59px
 
 	.toggle
 		display: block
@@ -151,13 +152,27 @@ $large: 1200px
 		top: 0px
 
 	.sidebar
+		padding-top: 15px
 		ul
+			.side-title
+				font-size: 1.5rem
+				padding-left: 30px
+				padding-bottom: 30px
+
 			a, label
 				font-size: 0.8rem
 	
 @media(min-width: $small)
-	.page-wrap
-		padding: 15px 100px 0px 100px
+	.sidebar
+		padding-top: 15px
+		ul
+			.side-title
+				font-size: 1.5rem
+				padding-left: 30px
+				padding-bottom: 30px
+
+			a, label
+				font-size: 0.8rem
 
 @media(min-width: $medium)
 	p

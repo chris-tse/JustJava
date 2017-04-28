@@ -28,9 +28,7 @@
 	padding-left: 20px
 
 .sidebar
-	+fixed(0, 0, 0, -350px)
 	+sidebartrans()
-	width: 300px
 	z-index: 0
 	background: $sidebarcolor
 
@@ -92,7 +90,6 @@
 			left: 0px
 
 		.toggle
-			left: 230px
 			color: white
 			background: transparent
 
@@ -141,9 +138,11 @@
 		scaleY(0)
 		display: none
 
+	
+
 
 @media(max-width: $small - 1)
-
+	
 	.toggle
 		display: block
 		width: 100%
@@ -151,8 +150,15 @@
 		font-size: 1.8rem
 		top: 0px
 
+	#sidebartoggler
+		&:checked + .page-wrap
+			.toggle
+				left: 230px
+
 	.sidebar
+		width: 300px
 		padding-top: 15px
+		+fixed(0, 0, 0, -350px)
 		ul
 			.side-title
 				font-size: 1.5rem
@@ -163,11 +169,16 @@
 				font-size: 0.8rem
 	
 @media(min-width: $small)
+	.toggle
+		padding-left: 10px
+		padding-right: 10px
+		background: $transwhite
 	.sidebar
+		width: 400px
 		padding-top: 15px
 		ul
 			.side-title
-				font-size: 1.5rem
+				font-size: 2.5rem
 				padding-left: 30px
 				padding-bottom: 30px
 

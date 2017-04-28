@@ -1,6 +1,15 @@
-# CS 3053 Group Project
+# JustJava
 
 by Christopher T, Tianyi C., Qiang P., Zhendong S.
+
+## About
+
+A website with a series of lessons to teach a beginner programmer the basics of the Java language for our group project in CS 3053 Human Computer Interaction. 
+
+This project focuses on achieving the following goals:
+- Teaching the basics of the Java language and programming concepts
+- Make use of code examples and practice problems
+- Have a clean interface using responsive design
 
 ## Demo
 

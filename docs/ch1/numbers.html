@@ -12,11 +12,6 @@
     <script src="https://use.fontawesome.com/529e3dbb41.js"></script>
 </head>
 <body>
-    <input type="checkbox" id="sidebartoggler"/>
-    <div class="page-wrap">
-        <label for="sidebartoggler" class="toggle">☰</label>
-        <div class="sidebar"></div>
-    </div>
 	<main class="container group">
 		<h1 class="title">Number Types</h1>
         <a href="../tableofcontents.html" class="toc"><i class="fa fa-angle-left" aria-hidden="true"></i> Back to Table of Contents</a>
@@ -69,7 +64,13 @@
 		
 
 	</main>
-
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("body").prepend('<input type="checkbox" id="sidebartoggler"/><div class="page-wrap"><label for="sidebartoggler" class="toggle">☰</label><div class="sidebar"></div></div>')
+            $(".sidebar").load("../sidenav.html")
+        })
+    </script>
     <script>
         function revealAnswer1() {
             let el1 = document.querySelector(".pair1#choice1");

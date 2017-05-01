@@ -26,5 +26,12 @@
 			<a class="btn btn-grey float-left" href="../ch2/switch.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: Switch Statement</a>	
 		</div>
 	</main>
+	<script src="../js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("body").prepend('<input type="checkbox" id="sidebartoggler"/><div class="page-wrap"><label for="sidebartoggler" class="toggle">☰</label><div class="sidebar"></div></div>')
+            $(".sidebar").load("../sidenav.html")
+        })
+    </script>
 </body>
 </html>

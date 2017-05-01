@@ -82,7 +82,13 @@ for (int i = 0; i < cond1; i++) {
 			<a class="btn btn-grey" href="arraybasics.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: Usings Arrays</a>
 		</div>
 	</main>
-
+	<script src="../js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("body").prepend('<input type="checkbox" id="sidebartoggler"/><div class="page-wrap"><label for="sidebartoggler" class="toggle">☰</label><div class="sidebar"></div></div>')
+            $(".sidebar").load("../sidenav.html")
+        })
+    </script>
 	<script>
 		let answer1 = "3";
 		let answer2 = "5";

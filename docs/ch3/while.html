@@ -68,7 +68,13 @@ while (x < 20) {
 			<a class="btn btn-grey" href="for.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: For Loops</a>
 		</div>
 	</main>
-
+	<script src="../js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("body").prepend('<input type="checkbox" id="sidebartoggler"/><div class="page-wrap"><label for="sidebartoggler" class="toggle">☰</label><div class="sidebar"></div></div>')
+            $(".sidebar").load("../sidenav.html")
+        })
+    </script>
 	<script>
 		let answerArr = [10, 12, 14, 16, 18]
 		let inp = document.querySelector(".ans-group");

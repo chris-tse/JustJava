@@ -117,7 +117,13 @@ boolean d = a || b;</code></pre>
 			<a class="btn btn-grey" href="equality.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: Equality</a>
 		</div>
 	</main>
-
+	<script src="../js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("body").prepend('<input type="checkbox" id="sidebartoggler"/><div class="page-wrap"><label for="sidebartoggler" class="toggle">☰</label><div class="sidebar"></div></div>')
+            $(".sidebar").load("../sidenav.html")
+        })
+    </script>
 	<script>
 		let a = document.querySelector("#a");
 		let b = document.querySelector("#b");

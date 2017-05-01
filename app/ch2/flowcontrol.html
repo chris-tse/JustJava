@@ -24,5 +24,12 @@
 			<a class="btn btn-grey float-left" href="../ch1/boolean.html"><i class="fa fa-angle-left" aria-hidden="true"></i> Prev: Boolean Types</a>	
 		</div>
 	</main>
+	<script src="../js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("body").prepend('<input type="checkbox" id="sidebartoggler"/><div class="page-wrap"><label for="sidebartoggler" class="toggle">☰</label><div class="sidebar"></div></div>')
+            $(".sidebar").load("../sidenav.html")
+        })
+    </script>
 </body>
 </html>

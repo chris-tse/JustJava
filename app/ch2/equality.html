@@ -76,7 +76,13 @@ boolean c = true != false</code></pre>
 		</div>
 
 	</main>
-
+	<script src="../js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("body").prepend('<input type="checkbox" id="sidebartoggler"/><div class="page-wrap"><label for="sidebartoggler" class="toggle">☰</label><div class="sidebar"></div></div>')
+            $(".sidebar").load("../sidenav.html")
+        })
+    </script>
 	<script>
         function revealAnswer1() {
             let el1 = document.querySelector(".pair1#choice1");

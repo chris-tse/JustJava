@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn Java - Ending</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/mainmenu.css">
+    <script src="https://use.fontawesome.com/529e3dbb41.js"></script>
+</head>
+<body>
+    <main class="container">
+        <h1>Congratulations</h1>
+
+        <p>You have finished the lessons that we currently have produced. </p>
+    </main>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("body").prepend('<input type="checkbox" id="sidebartoggler"/><div class="page-wrap"><label for="sidebartoggler" class="toggle">☰</label><div class="sidebar"></div></div>')
+            $(".sidebar").load("../sidenav.html")
+        })
+    </script>
+</body>
+</html>

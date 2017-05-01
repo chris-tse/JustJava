@@ -1,9 +1,9 @@
 @import 'vars'
 
-@mixin sidebartrans() 
+=sidebartrans() 
 	transition: all 0.5s
 
-@mixin fixed($t, $r, $b, $l)
+=fixed($t, $r, $b, $l)
 	position: fixed
 	top: $t
 	bottom: $b
@@ -25,7 +25,7 @@
 	font-size: 2.5rem
 	color: #000
 	cursor: pointer
-	padding-left: 20px
+	padding-left: 15px
 
 .sidebar
 	+sidebartrans()
@@ -190,7 +190,7 @@
 				padding-bottom: 30px
 
 			a, label
-				font-size: 0.8rem
+				font-size: 0.9rem
 
 @media(min-width: $medium)
 	p

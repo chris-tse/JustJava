@@ -10,6 +10,12 @@
 	line-height: 1.5
 	color: #292724
 
+.float-right
+	float: right
+
+.float-left
+	float: left
+
 .container
 	width: 100%
 	padding-left: 15px
@@ -34,8 +40,6 @@
 			margin-bottom: 15px
 
 	.nav
-		display: flex
-		align-items: baseline
 
 		.btn
 			padding: 10px 15px
@@ -169,8 +173,46 @@
 	background: $bg-red !important
 	.fa
 		color: red
-		display: inline-block
+		display: inline-block	
 
+
+@media(min-width: $large)
+	.container
+		max-width: 1050px
+		.title
+			font-size: 1.8rem
+
+@media(min-width: $medium) and (max-width: $large - 1)
+	.container
+		max-width: 850px
+		margin: 30px auto
+		.title
+			font-size: 1.5rem
+		.mc-pair
+			flex-direction: row
+		p, pre, .btn, .toc
+			font-size: 1rem
+
+@media(min-width: $small) and (max-width: $medium - 1)
+	.container
+		max-width: 630px
+		margin: 15px auto
+		.toc
+			font-size: 0.9rem
+		.mc-pair
+			.pair1, .pair2, .pair3
+				width: 49%
+				display: inline-block
+		.title
+			font-size: 1.4rem
+		p, pre, .btn
+			font-size: 0.9rem
+		.btn
+			display: inline-block
+			line-height: 1.5
+		.nav
+			flex-direction: row-reverse
+			justify-content: space-between
 
 @media(max-width: $small - 1)
 	.container
@@ -190,45 +232,6 @@
 			text-align: center
 		.nav
 			flex-direction: column
-
-@media(min-width: $small)
-	.container
-		max-width: 700px
-		margin: 15px auto
-		.toc
-			font-size: 0.9rem
-		.mc-pair
-			.pair1, .pair2, .pair3
-				width: 49%
-				display: inline-block
-		.title
-			font-size: 1.4rem
-		p, pre, .btn
-			font-size: 0.9rem
-		.btn
-			display: inline-block
-			line-height: 1.5
-		.nav
-			flex-direction: row-reverse
-			justify-content: space-between
-
-@media(min-width: $medium)
-	.container
-		max-width: 850px
-		margin: 30px auto
-		.title
-			font-size: 1.5rem
-		.mc-pair
-			flex-direction: row
-		p, pre, .btn, .toc
-			font-size: 1rem
-		
-
-@media(min-width: $large)
-	.container
-		max-width: 1150px
-		.title
-			font-size: 1.8rem
 
 // Clearfix
 .group:before,

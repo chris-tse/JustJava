@@ -5,6 +5,13 @@
 .thin
 	font-weight: lighter
 
+.body-title
+	text-align: center
+
+.body-flex
+	display: flex
+	align-items: space-around
+
 .page-content
 	.hero
 		background: url('../img/darkblurlady.jpg') no-repeat center fixed
@@ -60,7 +67,7 @@
 				padding: 10px 15px
 
 
-@media(min-width: $tiny + 1)
+@media(min-width: $tiny + 1) and (max-width: $small - 1)
 	.page-wrap
 		padding-top: 59px
 	.hero
@@ -84,6 +91,13 @@
 				text-align: center
 				max-width: 300px
 				margin: 0 auto 20px
+
+	.body-flex
+		flex-direction: column
+
+	.body-section
+		padding-left: 10px
+		padding-right: 10px
 				
 	
 @media(min-width: $small)
@@ -114,10 +128,29 @@
 					margin-right: 10px
 				&.herotrans
 					margin-left: 10px
+	
+
+
+	.body-flex
+		flex-direction: column
+	
 
 @media(min-width: $medium)
-	p
-		color: red
+	.body-section
+		width: 100%
+		max-width: 1500px
+		margin: 0 auto
+
+	.body-flex
+		flex-direction: row
+		justify-content: space-around
+		.flex-col
+			text-align: center
+			width: 30%
+			h3
+				font-size: 1.3rem
+			p
+				text-align: justify
 
 @media(min-width: $large)
 	p

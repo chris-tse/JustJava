@@ -13,7 +13,7 @@ This project focuses on achieving the following goals:
 
 ## Demo
 
-Build of current work can be viewed [here](https://christopher-tse.github.io/JustJava/build/)
+Build of current work can be viewed [here](https://christopher-tse.github.io/JustJava/)
 - Chapter 1 content (complete)
 - Chapter 2 content (complete)
 - Chapter 3 content (complete)

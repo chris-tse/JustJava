@@ -124,7 +124,7 @@ gulp.task('build-copy', ['clean'], function() {
     gulp.src(['app/ch3/*.html', 'app/ch3/*.java']).pipe(gulp.dest('docs/ch3/'));
     gulp.src(['app/ch4/*.html', 'app/ch4/*.java']).pipe(gulp.dest('docs/ch4/'));
     gulp.src(['app/ch5/*.html', 'app/ch5/*.java']).pipe(gulp.dest('docs/ch5/'));
-    gulp.src(['app/index.html', 'app/test.html', 'app/sidenav.html', 'app/tableofcontents.html', 'app/contact.html']).pipe(gulp.dest('docs/'));
+    gulp.src(['app/index.html', 'app/test.html', 'app/sidenav.html', 'app/tableofcontents.html', 'app/contact.html', 'app/ending.html']).pipe(gulp.dest('docs/'));
     gulp.src('app/css/**/*.css').pipe(gulp.dest('docs/css/'));
     gulp.src('app/js/*.js').pipe(gulp.dest('docs/js/'));
     gulp.src('app/img/*').pipe(gulp.dest('docs/img/'));

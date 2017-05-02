@@ -1,5 +1,9 @@
 @import 'vars'
 
+.toggle.white
+	color: white
+	background: none
+
 .thick
 	font-weight: bold
 .thin
@@ -56,6 +60,9 @@ footer
 		color: white
 
 @media(max-width: $tiny)
+	.toggle.white
+		color: #222
+		background: $transwhite
 	.hero
 		padding-top: 80px
 		height: 90vh
@@ -78,6 +85,9 @@ footer
 
 
 @media(min-width: $tiny + 1) and (max-width: $small - 1)
+	.toggle.white
+		color: #222
+		background: $transwhite
 	.page-wrap
 		padding-top: 59px
 	.hero
